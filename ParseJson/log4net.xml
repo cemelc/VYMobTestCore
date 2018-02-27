@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+  <log4net>
+    <appender name="RollingFileAppender" type="log4net.Appender.RollingFileAppender" >
+      <file value="C:\VuelingMobileApps_{Environment}\Logs\{ApplicationId}\{ApplicationId}.log" />
+      <appendToFile value="true" />	
+      <rollingStyle value="Composite" />
+      <datePattern value="yyyy.MM.dd.\l\o\g" />
+      <maxSizeRollBackups value="1000" />
+      <maximumFileSize value="10MB" />
+      <layout type="log4net.Layout.PatternLayout">
+        <conversionPattern value="%d [%-5level] Method:%M %C.cs in Line:%L %m%n" />
+      </layout>
+    </appender>
+    <root>
+      <level value="{LogLevel}"/>
+      <appender-ref ref="RollingFileAppender"/>
+		<!--<appender-ref ref="BugSnag"/>-->
+    </root>
+  </log4net>

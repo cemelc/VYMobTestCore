@@ -1,0 +1,33 @@
+{
+  "SellKeyList": [
+    {
+      "FareKey": "0~TP~~TOWVYP~OPTI~~17~X",
+      "JourneyKey": "VY~3000~ ~~BCN~07/06/2017 21:40~LPA~07/07/2017 00:10~"
+    }
+  ],
+  "DiscountType": "0",
+  "PaxInfoList": [
+    {
+      "PaxType": "ADT",
+      "Quantity": "2"
+    },
+    {
+      "PaxType": "CHD",
+      "Quantity": "1"
+    },
+    {
+      "PaxType": "INF",
+      "Quantity": "1"
+    }
+  ],
+  "CurrencyCode": "EUR",
+  "PaymentData": {
+    "PaymentMethodCode": ""
+  },
+  "Signature": "U14cLDVYeX8=|kbce/4V1HpUOtPMvnrqdwbB//AXjiGTpEO8pkC/jcp6Bu9HRjZ/uLmIG0I/LuTnsqefIcpwSJAScgifHMJ2cEWzQAka3bxGG8T1aixhPWJHE5Dc5DidiS79gVNUT9OC1NDHCf9/o5Gw=",
+  "Udid": "89ed-ba9a-49a5-1144-e6c3-d6bd",
+  "DeviceType": "WEB",
+  "UserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36",
+  "TokenID": "72fbc507-b4c2-4192-9c49-bcd6a56422e9",
+  "Language": "es-ES"
+}

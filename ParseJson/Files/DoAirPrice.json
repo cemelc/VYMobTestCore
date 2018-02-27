@@ -1,0 +1,28 @@
+{
+  "CurrencyCode": "EUR",
+  "AppVersion": "100",
+  "DeviceType": "WEB",
+  "Language": "es-ES",
+  "Paxs": [
+    {
+      "Quantity": 2,
+      "PaxType": "ADT"
+    },
+    {
+      "Quantity": 1,
+      "PaxType": "CHD"
+    },
+    {
+      "Quantity": 1,
+      "PaxType": "INF"
+    }
+  ],
+  "DiscountType": 0,
+  "AirportDateTimeList": [
+    {
+      "DepartureStation": "LGW",
+      "ArrivalStation": "BCN",
+      "MarketDateDeparture": "2018-02-07"
+    }
+  ]
+}

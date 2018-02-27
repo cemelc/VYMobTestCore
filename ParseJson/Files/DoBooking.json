@@ -1,0 +1,197 @@
+{
+  "DiscountType": "0",
+  "SellKeyList": [
+    {
+      "FareKey": "0~QI~~QOBBGK~IBBA~~1~X",
+      "JourneyKey": "VY~9731~ ~L~BCN~02/01/2018 06:30~MAD~02/01/2018 07:50~",
+      "PaxSSRList": [
+
+      ]
+    }
+  ],
+  "PaxInfoList": [
+    {
+      "Number": 0,
+      "PaxType": "ADT",
+      "Title": "Mr",
+      "FirstName": "Claudio",
+      "LastName": "Melcon",
+      "LastName2": "",
+      "Gender": "Male",
+      "TravelDocument": [
+        
+      ],
+      "isFrequent": false,
+      "frequentOrder": null,
+      "saveAsFrequent": false
+    }
+  ],
+  "SeatInfoList": [
+    
+  ],
+  "BagInfoList": [
+    
+  ],
+  "VipRoom": [
+    
+  ],
+  "Insurance": [
+    
+  ],
+  "CurrencyCode": "EUR",
+  "BookingContact": {
+    "TypeCode": "A",
+    "FirstName": "Claudio",
+    "LastName": "Melcon ",
+    "EmailAddress": "cemelc@caracas.com",
+    "HomePhone": "++34/601167935",
+    "PhonePrefix": {
+      "visible": true,
+      "key": "34",
+      "description": "España",
+      "extra": ""
+    },
+    "City": "madrid",
+    "CountryCode": "ES",
+    "CultureCode": "es-ES",
+    "CustomerNumber": ""
+  },
+  "PaymentData": {
+    "PaymentMethodType": null,
+    "PaymentMethodCode": "MC",
+    "QuotedCurrencyCode": "EUR",
+    "AccountNumber": "5210000010001001",
+    "Expiration": "01/2019",
+    "PaymentAddresses": "",
+    "PaymentFieldsList": [
+      {
+        "Name": "CC::VerificationCode",
+        "Value": "123"
+      },
+      {
+        "Name": "CC::AccountHolderName",
+        "Value": "prueba prueba"
+      }
+    ]
+  },
+  "segmentInfo": [
+    {
+      "IsInternational": false,
+      "SegmentSellKey": "VY~9731~ ~L~BCN~02/01/2018 06:30~MAD~02/01/2018 07:50~",
+      "DepartureStation": "BCN",
+      "ArrivalStation": "MAD",
+      "STD": "2018-02-01T06:30:00",
+      "STA": "2018-02-01T07:50:00",
+      "Duration": 80,
+      "CarrierCode": "VY",
+      "FlightNumber": "9731",
+      "ArriveNextDay": false,
+      "OperatedBy": "Iberia",
+      "OperatedByIcon": {
+        "_icon": "vy vy-logo-iberia-1x vy-1_0x",
+        "_paths": [
+          "path1",
+          "path2"
+        ]
+      }
+    }
+  ],
+  "JourneyList": [
+    {
+      "JourneySellKey": "VY~9731~ ~L~BCN~02/01/2018 06:30~MAD~02/01/2018 07:50~",
+      "DepartureStation": "BCN",
+      "ArrivalStation": "MAD",
+      "STA": "2018-02-01T07:50:00",
+      "STD": "2018-02-01T06:30:00",
+      "Duration": 80,
+      "IsConnection": false,
+      "ArriveNextDay": false,
+      "ConnectionTime": 0,
+      "isShortConnection": false,
+      "Segments": [
+        {
+          "IsInternational": false,
+          "SegmentSellKey": "VY~9731~ ~L~BCN~02/01/2018 06:30~MAD~02/01/2018 07:50~",
+          "DepartureStation": "BCN",
+          "ArrivalStation": "MAD",
+          "STD": "2018-02-01T06:30:00",
+          "STA": "2018-02-01T07:50:00",
+          "Duration": 80,
+          "CarrierCode": "VY",
+          "FlightNumber": "9731",
+          "ArriveNextDay": false,
+          "OperatedBy": "Iberia",
+          "OperatedByIcon": {
+            "_icon": "vy vy-logo-iberia-1x vy-1_0x",
+            "_paths": [
+              "path1",
+              "path2"
+            ]
+          }
+        }
+      ],
+      "JourneyFare": [
+        {
+          "Amount": 44.97,
+          "PromoType": "NOT-SPECIFIED",
+          "ProductClass": "BB",
+          "JourneyFareKey": "0~QI~~QOBBGK~IBBA~~1~X",
+          "IsFareAvailable": true,
+          "AvailableCount": 0,
+          "IsPromo": false,
+          "IsPromoVYAplicable": false,
+          "Active": true,
+          "ColumnId": 0,
+          "CurrencyCode": "EUR"
+        }
+      ],
+      "AtvState": null,
+      "AtvCode": null,
+      "AtvTime": 0,
+      "CheckinLostWarning": false,
+      "State": null,
+      "OperatedBy": "Iberia",
+      "OperatedByIcons": [
+        {
+          "_icon": "vy vy-logo-iberia-1x vy-1_0x",
+          "_paths": [
+            "path1",
+            "path2"
+          ]
+        }
+      ],
+      "PriceClassMap": [
+        {
+          "Amount": 44.97,
+          "PromoType": "NOT-SPECIFIED",
+          "ProductClass": "BB",
+          "JourneyFareKey": "0~QI~~QOBBGK~IBBA~~1~X",
+          "IsFareAvailable": true,
+          "AvailableCount": 0,
+          "IsPromo": false,
+          "IsPromoVYAplicable": false,
+          "Active": true,
+          "ColumnId": 0,
+          "CurrencyCode": "EUR"
+        }
+      ],
+      "HeaderIcon": {
+        "_icon": "icoclass s075",
+        "_labelIcon": {
+          "_module": "common",
+          "_key": "fare_iberia_basic"
+        },
+        "_lavelIconText": "Básica Iberia"
+      }
+    }
+  ],
+  "TripType": 0,
+  "DoCommit": true,
+  "DeviceFingerPrint": "1a85-f1fb-1038-793f-9574-27bc",
+  "DeviceType": "WEB",
+  "Language": "es-ES",
+  "Signature": "Wu5ZzgEaiS0=|qBMKSIxCZXh4k5wYyI1E2Rwy5zT5tmyMGIfMD8ATd0nygejwjl6wAHeUV/8N+RSS0TXMuzcHRryLn36CHEYW31ZSpfub11q+sh9qt0XIZrMnGUMzMyHst5JvMU2b83ej6qHPAo/Zpco=",
+  "Udid": "1a85-f1fb-1038-793f-9574-27bc",
+  "UserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36",
+  "TokenID": "be3191f2-fefb-4cb6-a852-27853eec2d7c"
+}

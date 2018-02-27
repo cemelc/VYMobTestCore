@@ -1,0 +1,16 @@
+{
+  "URL": [
+    {
+      "DoAirPrice": "https://apimobile-pre.vueling.com/Vueling.Mobile.BookingServices.WebAPI/api/v3/Price/DoAirPriceSB",
+      "DoAirPriceFee": "https://apimobile-pre.vueling.com/Vueling.Mobile.BookingServices.WebAPI/api/Fee/DoPriceAndFee",
+      "DoBooking": "https://apimobile-pre.vueling.com/Vueling.Mobile.BookingServices.WebAPI/api/Booking/DoBooking",
+      "CreateAccount": "https://apimobile-pre.vueling.com/Vueling.Mobile.MyVuelingServices.WebAPI/api/Avios/CreateAccount"
+    },
+    {
+      "DoAirPrice": "https://apimobile-int.vueling.com/Vueling.Mobile.BookingServices.WebAPI/api/v3/Price/DoAirPriceSB",
+      "DoAirPriceFee": "https://apimobile-int.vueling.com/Vueling.Mobile.BookingServices.WebAPI/api/Fee/DoPriceAndFee",
+      "DoBooking": "https://apimobile-int.vueling.com/Vueling.Mobile.BookingServices.WebAPI/api/Booking/DoBooking",
+      "CreateAccount": "https://apimobile-pre.vueling.com/Vueling.Mobile.MyVuelingServices.WebAPI/api/Avios/CreateAccount"
+    }
+  ]
+}

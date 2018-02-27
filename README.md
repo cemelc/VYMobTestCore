@@ -1,0 +1,2 @@
+# VYMobTestCore
+Proyecto de mobile

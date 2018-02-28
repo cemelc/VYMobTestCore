@@ -15,14 +15,14 @@ namespace ParseJson
             }
 
             string response = null;
-            int Tries=3;
+            int Tries=5;
             HttpWebRequest httpWebRequest = null;
             httpWebRequest = (HttpWebRequest)WebRequest.Create(baseAddress);
 
             httpWebRequest.ContentType = "application/json";
             httpWebRequest.Accept = "application/json";
             httpWebRequest.Method = "POST";
-            httpWebRequest.Timeout = 10000;            
+            httpWebRequest.Timeout = 100000;            
 
             using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
             {
@@ -48,9 +48,10 @@ namespace ParseJson
                 if (ex.Status == WebExceptionStatus.Timeout || ex.Status == WebExceptionStatus.ConnectFailure) { 
                     if (--Tries == 0)
                     {
+                        SendArchivo(baseAddress, filerequest);
                         throw;
-                    }
-                SendArchivo(baseAddress, filerequest);
+                    }                    
+               
                 }
             }
 

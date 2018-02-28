@@ -22,16 +22,18 @@ namespace ParseJson
             string configfile = Fileobject.FindFiles("*log4net.xml");         
             XmlConfigurator.Configure(Fileobject.LoadLog4netXmlDocument(configfile, Env, ApplicationID).DocumentElement);
             var log = LogManager.GetLogger(ApplicationID);
-
+            
             log.Debug(string.Format("***** SERVICE INITIALIZED: {0} *****", ApplicationID));
 
             LoginRequest loginReqObj = new LoginRequest() {
-                Username= "email.auts7g3s@gmail.com",
-                Password= "Au!591850",
-                IP= "235.231.34.152",
-                DeviceType="WEB",
-                Language="es-ES",
-                Token="whatever"
+                Username = "email.auts7g3s@gmail.com",
+                Password = "Au!591850",
+                IP = "235.231.34.152",
+                DeviceType = "WEB",
+                Language = "es-ES",
+                TokenID = "1f2df8d2-484d-4988-8dde-5d03e319520d",
+                UserAgent = "Mozilla / 5.0(Windows NT 10.0; Win64; x64) AppleWebKit / 537.36(KHTML, like Gecko) Chrome / 64.0.3282.167 Safari / 537.36",
+                Udid = "\"6979-5271-f146-5b16-421f-d63c\""
             };
 
             Parse LeerJson = new Parse();

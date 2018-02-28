@@ -4,7 +4,7 @@
       "DoAirPrice": "https://apimobile-pre.vueling.com/Vueling.Mobile.BookingServices.WebAPI/api/v3/Price/DoAirPriceSB",
       "DoAirPriceFee": "https://apimobile-pre.vueling.com/Vueling.Mobile.BookingServices.WebAPI/api/Fee/DoPriceAndFee",
       "DoBooking": "https://apimobile-pre.vueling.com/Vueling.Mobile.BookingServices.WebAPI/api/Booking/DoBooking",
-      "Login": "https://apimobile-pre.vueling.com/Vueling.Mobile.MyVuelingServices.WebAPI/TestAvios",
+      "Login": "https://apimobile-pre.vueling.com/Vueling.Mobile.MyVuelingServices.WebAPI/api/Avios/Login",
       "CreateAccount": "https://apimobile-pre.vueling.com/Vueling.Mobile.MyVuelingServices.WebAPI/api/Avios/CreateAccount"
     },
     {

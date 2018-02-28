@@ -15,13 +15,14 @@ namespace ParseJson
             }
 
             string response = null;
-            int Tries=20;
-            var httpWebRequest = (HttpWebRequest)WebRequest.Create(baseAddress);
+            int Tries=3;
+            HttpWebRequest httpWebRequest = null;
+            httpWebRequest = (HttpWebRequest)WebRequest.Create(baseAddress);
 
             httpWebRequest.ContentType = "application/json";
             httpWebRequest.Accept = "application/json";
             httpWebRequest.Method = "POST";
-            httpWebRequest.Timeout = 100000;            
+            httpWebRequest.Timeout = 10000;            
 
             using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
             {
@@ -34,8 +35,8 @@ namespace ParseJson
 
             try
             {
-                var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
-
+                HttpWebResponse httpResponse = null;
+                httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
 
                 using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
                 {

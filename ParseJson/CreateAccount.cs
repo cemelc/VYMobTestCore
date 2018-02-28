@@ -35,14 +35,14 @@ namespace ParseJson
             string idusuario = envio.SendArchivo(URlobject.URL[0].CreateAccount, register);
 
             if (idusuario.Contains("E_SYSTEM")) {
-                contacto = null;
-                contacto = new Contacts();
+                register = null;         
+                register = contacto.NewAccount();
                 idusuario = envio.SendArchivo(URlobject.URL[0].CreateAccount, register);
             }
             if (idusuario.Contains("E_AVIOS"))
             {
-                contacto = null;
-                contacto = new Contacts();
+                register = null;
+                register = contacto.NewAccount();
                 idusuario = envio.SendArchivo(URlobject.URL[0].CreateAccount, register);
             }
 

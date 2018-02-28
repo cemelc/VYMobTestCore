@@ -72,6 +72,7 @@
     <Compile Include="Login\LoginClasses\SecurityQuestion.cs" />
     <Compile Include="Login\LoginClasses\Token.cs" />
     <Compile Include="Login\LoginClasses\TotalBalance.cs" />
+    <Compile Include="Login\LoginRequest.cs" />
     <Compile Include="Login\LoginResponse.cs" />
     <Compile Include="LogPrueba.cs" />
     <Compile Include="BuscarVuelo.cs" />

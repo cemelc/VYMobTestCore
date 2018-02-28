@@ -149,7 +149,6 @@
     <Compile Include="DoAirPriceFee\DoAirPriceClasses\SeatFee.cs" />
     <Compile Include="DoAirPriceFee\DoAirPriceClasses\Segment.cs" />
     <Compile Include="DoAirPriceFee\DoAirPriceClasses\SellKeyList.cs" />
-    <Compile Include="SendFile.cs" />
     <Compile Include="DoAirPrice\DoAirPriceClasses\Trip.cs" />
     <Compile Include="BasicBooking.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

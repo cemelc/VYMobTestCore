@@ -11,18 +11,15 @@ namespace ParseJson
 {
     public class Contacts
     {
-
-
         int ADT, CHD, INF, Total, paxnumber, number, Totalaux = 0;
 
         public BookingContact FillContact(DoBookingRequest actualcontact)
         {
-            Parse LeerJson = new Parse();
             BookingContact Contact = new BookingContact();
             Contact = actualcontact.BookingContact;
-            Contact.FirstName = "Contact Aut Name " + LeerJson.StringGen(5, 2);
-            Contact.LastName = "Contact Aut Apellido " + LeerJson.StringGen(5, 2);
-            Contact.EmailAddress = "email.aut" + (LeerJson.StringGen(5, 1) + "@" + "gmail" + "." + "com");
+            Contact.FirstName = "Contact Aut Name " + RandomGenerator.RandomString(5, 2);
+            Contact.LastName = "Contact Aut Apellido " + RandomGenerator.RandomString(6, 2);
+            Contact.EmailAddress = "email.aut" + (RandomGenerator.RandomString(5, 1) + "@" + "gmail" + "." + "com");
 
             return Contact;
         }
@@ -92,8 +89,8 @@ namespace ParseJson
             fillingobject.Number = contador;
             fillingobject.PaxType = "ADT";
             fillingobject.Title = "Mr";
-            fillingobject.FirstName = "Pasajero Aut Name " + LeerJson.StringGen(5, 2);
-            fillingobject.LastName = "Pasajero Aut LastName " + LeerJson.StringGen(6, 2);
+            fillingobject.FirstName = "Pasajero Aut Name " + RandomGenerator.RandomString(5, 2);
+            fillingobject.LastName = "Pasajero Aut LastName " + RandomGenerator.RandomString(6, 2);
             fillingobject.Gender = "Male";
             fillingobject.isFrequent = false;
             fillingobject.frequentOrder = null;
@@ -117,8 +114,8 @@ namespace ParseJson
                         Number = last,
                         PaxType = "INF",
                         PaxNumber = paxcount,
-                        FirstName = "Bebe Aut Name" + LeerJson.StringGen(5, 2),
-                        LastName = "Bebe Aut LastName" + LeerJson.StringGen(5, 2),
+                        FirstName = "Bebe Aut Name" + RandomGenerator.RandomString(5, 2),
+                        LastName = "Bebe Aut LastName" + RandomGenerator.RandomString(5, 2),
                         OrderView = 3,
                         Type = 4,
                         isFrequent = false,
@@ -148,11 +145,11 @@ namespace ParseJson
             newUser.Udid = "\"6979-5271-f146-5b16-421f-d63c\"";
             newUser.IP = "235.231.34.152";
             newUser.AirportOrigin = "BCN";
-            newUser.Name = "Pasajero Aut Name " + LeerJson.StringGen(5, 2);
-            newUser.LastName = "Pasajero Aut LastName " + LeerJson.StringGen(6, 2);
-            newUser.Password = "Au!" + LeerJson.StringGen(6, 3);
+            newUser.Name = "Pasajero Aut Name " + RandomGenerator.RandomString(5, 2);
+            newUser.LastName = "Pasajero Aut LastName " + RandomGenerator.RandomString(6, 2);
+            newUser.Password = "Au!" + RandomGenerator.RandomString(6, 3);
             newUser.SubscribeToNewsletter = false;
-            newUser.Email = "email.aut" + (LeerJson.StringGen(5, 1) + "@" + "gmail" + "." + "com");
+            newUser.Email = "email.aut" + (RandomGenerator.RandomString(5, 1) + "@" + "gmail" + "." + "com");
             newUser.SecurityQuestions.Add(Security("2"));            
             newUser.SecurityQuestions.Add(Security("3"));
 
@@ -168,7 +165,7 @@ namespace ParseJson
             SecurityQuestion security = new SecurityQuestion();
 
             security.QuestionId = type;
-            security.Answer = LeerJson.StringGen(5, 2);           
+            security.Answer = RandomGenerator.RandomString(5, 2);           
 
             return security;
         }

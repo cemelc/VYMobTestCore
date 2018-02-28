@@ -62,7 +62,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CreateAccpunt.cs" />
+    <Compile Include="CreateAccount.cs" />
     <Compile Include="Login\CreateAccount.cs" />
     <Compile Include="Login\LoginClasses\CustomerProgram.cs" />
     <Compile Include="Login\LoginClasses\FamNumData.cs" />
@@ -149,6 +149,8 @@
     <Compile Include="DoAirPriceFee\DoAirPriceClasses\SeatFee.cs" />
     <Compile Include="DoAirPriceFee\DoAirPriceClasses\Segment.cs" />
     <Compile Include="DoAirPriceFee\DoAirPriceClasses\SellKeyList.cs" />
+    <Compile Include="RandomGenerator.cs" />
+    <Compile Include="SendFile.cs" />
     <Compile Include="DoAirPrice\DoAirPriceClasses\Trip.cs" />
     <Compile Include="BasicBooking.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

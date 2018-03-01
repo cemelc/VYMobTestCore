@@ -151,6 +151,5 @@ namespace ParseJson
             log.Debug(string.Format("***** SERVICE FINALIZED: {0} *****", ApplicationID));
         }
 
-
     }
 }

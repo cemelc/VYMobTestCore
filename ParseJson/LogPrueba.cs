@@ -49,18 +49,17 @@ namespace ParseJson
 
 
             bool retry = false;
-            string login =null;
+            string login = null;
 
             while (retry == false)
             {
 
                 if (login == null)
-                {                   
+                {
                     login = envio.SendArchivo(fileURL.URL[0].Login, loginReqObj);
                 }
                 else
                 {
-
                     retry = true;
                 }
             }

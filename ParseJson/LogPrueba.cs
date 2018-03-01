@@ -26,13 +26,13 @@ namespace ParseJson
             log.Debug(string.Format("***** SERVICE INITIALIZED: {0} *****", ApplicationID));
 
             LoginRequest loginReqObj = new LoginRequest() {
-                Username = "email.auts7g3s@gmail.com",
-                Password = "Au!591850",
+                Username = "email.autJCFF1@gmail.com",
+                Password = "Au!506581",
                 IP = "235.231.34.152",
                 DeviceType = "WEB",
                 Language = "es-ES",
-                TokenID = "1f2df8d2-484d-4988-8dde-5d03e319520d",
-                UserAgent = "Mozilla / 5.0(Windows NT 10.0; Win64; x64) AppleWebKit / 537.36(KHTML, like Gecko) Chrome / 64.0.3282.167 Safari / 537.36",
+                TokenID = "nojoda",
+                //UserAgent = "Mozilla / 5.0(Windows NT 10.0; Win64; x64) AppleWebKit / 537.36(KHTML, like Gecko) Chrome / 64.0.3282.167 Safari / 537.36",
                 Udid = "\"6979-5271-f146-5b16-421f-d63c\""
             };
 
@@ -55,11 +55,6 @@ namespace ParseJson
             Console.WriteLine("El login esperado es:" + loginObject.MemberData.Email);
             log.Info("El nombre del usuario es:" + loginObject.MemberData.FirstName);
             Console.WriteLine("El login esperado es:" + loginObject.MemberData.FirstName);
-
-
-
-
-
         }
     }
 

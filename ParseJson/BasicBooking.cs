@@ -23,7 +23,7 @@ namespace ParseJson
         {
             //Variables                
             var Date = DateTime.Now.AddDays(7);
-            string doairpriceresponsestring, Doairpricefeeresponsestring, dobookingresponsestring, baseAddressDoAirPrice,
+            string doairpriceresponsestring = null, Doairpricefeeresponsestring = null, dobookingresponsestring = null, baseAddressDoAirPrice,
                    baseAddressDoAirPriceAndFee, baseAddressDoBooking;
 
             //Objetos usados en codigo
@@ -97,7 +97,22 @@ namespace ParseJson
             Empty = null;
 
             //Recepcción del request de do air price response
-            doairpriceresponsestring = envio.SendArchivo(baseAddressDoAirPrice, doairpricerequest);
+            bool retry3 = false;
+
+            while (retry3 == false)
+            {
+
+                if (doairpriceresponsestring == null)
+                {
+                    doairpriceresponsestring = envio.SendArchivo(baseAddressDoAirPrice, doairpricerequest);
+                }
+                else
+                {
+                    retry3 = true;
+                }
+            }
+
+            
             doAirPriceResponse = JsonConvert.DeserializeObject<DoAirPriceResponse>(doairpriceresponsestring);
 
             //Selección del vuelo que usaremos para la pruebas
@@ -112,7 +127,24 @@ namespace ParseJson
             Doairpricefeerequest.SellKeyList[0].FareKey = currentJourney.JourneyFare[0].JourneyFareKey;
             Doairpricefeerequest.SellKeyList[0].JourneyKey = currentJourney.JourneySellKey;
             Doairpricefeerequest.PaxInfoList = doairpricerequest.Paxs;
-            Doairpricefeeresponsestring = envio.SendArchivo(baseAddressDoAirPriceAndFee, Doairpricefeerequest);
+
+            bool retry2 = false;
+
+            while (retry2 == false)
+            {
+
+                if (Doairpricefeeresponsestring == null)
+                {
+                    Doairpricefeeresponsestring = envio.SendArchivo(baseAddressDoAirPriceAndFee, Doairpricefeerequest);
+                }
+                else
+                {
+                    retry2 = true;
+                }
+            }
+
+
+            
 
             //Llenado de objecto de respuesta del DoAirPRice
             DoAirPriceAndFeeResponseObjecto = JsonConvert.DeserializeObject<DoAirPriceFeeResponse>(Doairpricefeeresponsestring);
@@ -140,7 +172,27 @@ namespace ParseJson
             BookingrequestObject.BookingContact = Contact.FillContact(BookingrequestObject);
 
             //DoBookin                
-            dobookingresponsestring = envio.SendArchivo(baseAddressDoBooking, BookingrequestObject);
+
+            bool retry = false;            
+
+            while (retry == false)
+            {
+
+                if (dobookingresponsestring == null)
+                {
+                    dobookingresponsestring = envio.SendArchivo(baseAddressDoBooking, BookingrequestObject);
+                    //string json = JsonConvert.SerializeObject(BookingrequestObject, Formatting.Indented);
+
+                }
+                else
+                {
+                    retry = true;
+                }
+            }
+
+
+
+            
             BookingresponseObject = JsonConvert.DeserializeObject<DobookingResponse>(dobookingresponsestring);
             //Console.WriteLine("Response de Booking RecordLocator: " + BookingresponseObject.Success.RecordLocator);
             Console.WriteLine("Response de Booking RecordLocator: " + dobookingresponsestring);

@@ -31,8 +31,7 @@ namespace ParseJson
                 IP = "235.231.34.152",
                 DeviceType = "WEB",
                 Language = "es-ES",
-                TokenID = "nojoda",
-                //UserAgent = "Mozilla / 5.0(Windows NT 10.0; Win64; x64) AppleWebKit / 537.36(KHTML, like Gecko) Chrome / 64.0.3282.167 Safari / 537.36",
+                TokenID = "nojoda",                
                 Udid = "\"6979-5271-f146-5b16-421f-d63c\""
             };
 
@@ -47,7 +46,25 @@ namespace ParseJson
 
             var urlocation = Fileobject.FindFiles("*Urls.json");
             DirectoryofURL URlobject = (DirectoryofURL)LeerJson.FileRequest(urlocation, "file");
-            string login = envio.SendArchivo(fileURL.URL[0].Login, loginReqObj);
+
+
+            bool retry = false;
+            string login =null;
+
+            while (retry == false)
+            {
+
+                if (login == null)
+                {                   
+                    login = envio.SendArchivo(fileURL.URL[0].Login, loginReqObj);
+                }
+                else
+                {
+
+                    retry = true;
+                }
+            }
+
             var loginObject = JsonConvert.DeserializeObject<LoginResponse>(login);
 
 

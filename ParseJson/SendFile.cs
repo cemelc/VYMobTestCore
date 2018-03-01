@@ -16,42 +16,49 @@ namespace ParseJson
 
             string response = null;
             int Tries=5;
-            HttpWebRequest httpWebRequest = null;
-            httpWebRequest = (HttpWebRequest)WebRequest.Create(baseAddress);
+
+            var httpWebRequest = (HttpWebRequest)WebRequest.Create(baseAddress);
 
             httpWebRequest.ContentType = "application/json";
             httpWebRequest.Accept = "application/json";
             httpWebRequest.Method = "POST";
-            httpWebRequest.Timeout = 100000;            
+            if (baseAddress.Contains("Login")|| baseAddress.Contains("CreateAccount"))
+            {
+                httpWebRequest.Timeout = 1000000;
+            }
+            
 
             using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
             {
                 string json = JsonConvert.SerializeObject(filerequest, Formatting.Indented);
-                streamWriter.Write(json);
-                Console.WriteLine(json);
+                streamWriter.Write(json);                
                 streamWriter.Flush();
                 streamWriter.Close();
             }
 
             try
             {
-                HttpWebResponse httpResponse = null;
-                httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+
+                var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+
 
                 using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
                 {
                     var result = streamReader.ReadToEnd();
                     response = result;
-                } 
-            }catch (WebException ex)
+                }
+            }
+            catch (WebException ex)
             {
-                if (ex.Status == WebExceptionStatus.Timeout || ex.Status == WebExceptionStatus.ConnectFailure) { 
-                    if (--Tries == 0)
+                if (ex.Status == WebExceptionStatus.Timeout || ex.Status == WebExceptionStatus.ConnectFailure)
+                {
+                    if (Tries == 0)
                     {
-                        SendArchivo(baseAddress, filerequest);
                         throw;
-                    }                    
-               
+                    }
+                    SendArchivo(baseAddress, filerequest);
+                    --Tries;
+
                 }
             }
 

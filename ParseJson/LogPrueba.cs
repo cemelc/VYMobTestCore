@@ -28,10 +28,10 @@ namespace ParseJson
             LoginRequest loginReqObj = new LoginRequest() {
                 Username = "email.autJCFF1@gmail.com",
                 Password = "Au!506581",
-                IP = "235.231.34.152",
+                IP = "235.231.34."+RandomGenerator.RandomString(3,3),
                 DeviceType = "WEB",
                 Language = "es-ES",
-                TokenID = "nojoda",                
+                TokenID = RandomGenerator.RandomString(6, 3),                
                 Udid = "\"6979-5271-f146-5b16-421f-d63c\""
             };
 
@@ -49,18 +49,17 @@ namespace ParseJson
 
 
             bool retry = false;
-            string login =null;
+            string login = null;
 
             while (retry == false)
             {
 
-                if (login == null)
-                {                   
+                if (login == null || login.Contains("E_AVIOS") || login.Contains("E_SYSTEM"))
+                {
                     login = envio.SendArchivo(fileURL.URL[0].Login, loginReqObj);
                 }
                 else
                 {
-
                     retry = true;
                 }
             }

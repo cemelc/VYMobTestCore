@@ -38,7 +38,7 @@ namespace ParseJson
 
             while (retry == false) {
 
-                if (idusuario.Contains("E_SYSTEM") || idusuario.Contains("E_AVIOS") || idusuario == null)
+                if (idusuario == null || idusuario.Contains("E_SYSTEM") || idusuario.Contains("E_AVIOS"))
                 {
                     register = null;
                     register = contacto.NewAccount();
@@ -50,9 +50,7 @@ namespace ParseJson
                 }
 
 
-            }
-
-            
+            }            
 
             log.Info("The User ID created is: " + idusuario);
             Console.WriteLine("ID es:" + idusuario);

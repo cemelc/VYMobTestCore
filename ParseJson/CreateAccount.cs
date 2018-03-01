@@ -32,19 +32,27 @@ namespace ParseJson
             Contacts contacto = new Contacts();
             register = contacto.NewAccount();
 
-            string idusuario = envio.SendArchivo(URlobject.URL[0].CreateAccount, register);
+            string idusuario = null;
 
-            if (idusuario.Contains("E_SYSTEM")) {
-                register = null;         
-                register = contacto.NewAccount();
-                idusuario = envio.SendArchivo(URlobject.URL[0].CreateAccount, register);
+            bool retry = false;
+
+            while (retry == false) {
+
+                if (idusuario.Contains("E_SYSTEM") || idusuario.Contains("E_AVIOS") || idusuario == null)
+                {
+                    register = null;
+                    register = contacto.NewAccount();
+                    idusuario = envio.SendArchivo(URlobject.URL[0].CreateAccount, register);
+                }
+                else {
+
+                    retry = true;
+                }
+
+
             }
-            if (idusuario.Contains("E_AVIOS"))
-            {
-                register = null;
-                register = contacto.NewAccount();
-                idusuario = envio.SendArchivo(URlobject.URL[0].CreateAccount, register);
-            }
+
+            
 
             log.Info("The User ID created is: " + idusuario);
             Console.WriteLine("ID es:" + idusuario);

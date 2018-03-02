@@ -13,13 +13,13 @@ namespace ParseJson
 {
 
     [TestClass]
-    public class BasicBooking
+    public class BasicBookingTest
     {
         public static string ApplicationID = "Vueling.TestCore";
         public const string Env = "PRE";
 
         [TestMethod]
-        public void TestBasicBooking()
+        public void BasicBooking()
         {
             //Variables                
             var Date = DateTime.Now.AddDays(7);
@@ -163,6 +163,7 @@ namespace ParseJson
             BookingrequestObject.SellKeyList[0].PaxSSRList = ssrcode.FillingSSr(doairpricerequest).PaxSSRList; 
             BookingrequestObject.JourneyList[0] = currentJourney;
             BookingrequestObject.segmentInfo = currentJourney.Segments;
+           
 
             //Paxinfolist
             var BookingrequestObjectaux = Contact.FillPaxInfo(doairpricerequest);
@@ -171,31 +172,18 @@ namespace ParseJson
             //BookingInfoList
             BookingrequestObject.BookingContact = Contact.FillContact(BookingrequestObject);
 
-            //DoBookin                
+            //DoBookin              
 
-            bool retry = false;            
+            dobookingresponsestring = envio.SendArchivo(baseAddressDoBooking, BookingrequestObject);
+           //string json = JsonConvert.SerializeObject(BookingrequestObject, Formatting.Indented);
 
-            while (retry == false)
-            {
-
-                if (dobookingresponsestring == null)
-                {
-                    dobookingresponsestring = envio.SendArchivo(baseAddressDoBooking, BookingrequestObject);
-                    //string json = JsonConvert.SerializeObject(BookingrequestObject, Formatting.Indented);
-
-                }
-                else
-                {
-                    retry = true;
-                }
-            }
 
 
 
             
             BookingresponseObject = JsonConvert.DeserializeObject<DobookingResponse>(dobookingresponsestring);
             //Console.WriteLine("Response de Booking RecordLocator: " + BookingresponseObject.Success.RecordLocator);
-            Console.WriteLine("Response de Booking RecordLocator: " + dobookingresponsestring);
+            Console.WriteLine("Response de Booking RecordLocator: " + BookingresponseObject.Success.RecordLocator);
 
             log.Info("The record Locator is: " + BookingresponseObject.Success.RecordLocator);
 

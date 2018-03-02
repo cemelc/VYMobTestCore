@@ -8,13 +8,13 @@ namespace ParseJson
 {
 
     [TestClass]
-    public class CreateAccount
+    public class CreateAccountTest
     {
         public const string ApplicationID = "Vueling.CreateAccount";
         public const string Env = "PRE";
 
         [TestMethod]
-        public void CreateAccountTest()
+        public void CreateAccount()
         {
             FileManager Fileobject = new FileManager();
             string configfile = Fileobject.FindFiles("*log4net.xml");

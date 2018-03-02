@@ -31,6 +31,7 @@ namespace ParseJson
             using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
             {
                 string json = JsonConvert.SerializeObject(filerequest, Formatting.Indented);
+                Console.WriteLine(json);
                 streamWriter.Write(json);                
                 streamWriter.Flush();
                 streamWriter.Close();

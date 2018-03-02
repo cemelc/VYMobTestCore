@@ -1,0 +1,78 @@
+{
+  "PRE": [
+    {
+      "MasterCard": [
+        {
+          "PaymentMethodType": "",
+          "PaymentMethodCode": "MC",
+          "QuotedCurrencyCode": "EUR",
+          "AccountNumber": "5210000010001001",
+          "Expiration": "01/2020",
+          "PaymentAddresses": "",
+          "PaymentFieldsList": [
+            {
+              "Name": "CC::VerificationCode",
+              "Value": "123"
+            },
+            {
+              "Name": "CC::AccountHolderName",
+              "Value": "AUT Test"
+            }
+          ]
+        }
+      ],
+      "Ideal": [
+        {
+          "PaymentMethodType": null,
+          "PaymentMethodCode": "IA",
+          "QuotedCurrencyCode": "EUR",
+          "QuotedAmount": 100,
+          "AccountNumber": "",
+          "Expiration": "",
+          "PaymentAddresses": "",
+          "IssuerId": "1154",
+          "PaymentFieldsList": [
+            {
+              "Name": "iDealData::Language",
+              "Value": "es"
+            },
+            {
+              "Name": "CountryCode",
+              "Value": "NL"
+            },
+            {
+              "Name": "ADYEN::IssuerID",
+              "Value": "1154"
+            }
+          ]
+        }        
+      ]
+    },
+    {
+      "DoAirPrice": "https://apimobile-int.vueling.com/Vueling.Mobile.BookingServices.WebAPI/api/v3/Price/DoAirPriceSB",
+      "DoAirPriceFee": "https://apimobile-int.vueling.com/Vueling.Mobile.BookingServices.WebAPI/api/Fee/DoPriceAndFee",
+      "DoBooking": "https://apimobile-int.vueling.com/Vueling.Mobile.BookingServices.WebAPI/api/Booking/DoBooking",
+      "Login": "https://apimobile-int.vueling.com/Vueling.Mobile.MyVuelingServices.WebAPI/TestAvios",
+      "CreateAccount": "https://apimobile-pre.vueling.com/Vueling.Mobile.MyVuelingServices.WebAPI/api/Avios/CreateAccount"
+    }
+  ],
+  "INT": [
+    {
+      "DoAirPrice": "https://apimobile-pre.vueling.com/Vueling.Mobile.BookingServices.WebAPI/api/v3/Price/DoAirPriceSB",
+      "DoAirPriceFee": "https://apimobile-pre.vueling.com/Vueling.Mobile.BookingServices.WebAPI/api/Fee/DoPriceAndFee",
+      "DoBooking": "https://apimobile-pre.vueling.com/Vueling.Mobile.BookingServices.WebAPI/api/Booking/DoBooking",
+      "Login": "https://apimobile-pre.vueling.com/Vueling.Mobile.MyVuelingServices.WebAPI/api/Avios/Login",
+      "CreateAccount": "https://apimobile-pre.vueling.com/Vueling.Mobile.MyVuelingServices.WebAPI/api/Avios/CreateAccount"
+    }
+  ],
+  "PRO": [
+    {
+      "DoAirPrice": "https://apimobile-pre.vueling.com/Vueling.Mobile.BookingServices.WebAPI/api/v3/Price/DoAirPriceSB",
+      "DoAirPriceFee": "https://apimobile-pre.vueling.com/Vueling.Mobile.BookingServices.WebAPI/api/Fee/DoPriceAndFee",
+      "DoBooking": "https://apimobile-pre.vueling.com/Vueling.Mobile.BookingServices.WebAPI/api/Booking/DoBooking",
+      "Login": "https://apimobile-pre.vueling.com/Vueling.Mobile.MyVuelingServices.WebAPI/api/Avios/Login",
+      "CreateAccount": "https://apimobile-pre.vueling.com/Vueling.Mobile.MyVuelingServices.WebAPI/api/Avios/CreateAccount"
+    }
+  ]
+
+}

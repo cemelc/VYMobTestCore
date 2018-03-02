@@ -14,7 +14,7 @@ namespace ParseJson
         public const string Env = "PRE";
 
         [TestMethod]
-        public void CreateAccountTest()
+        public void PaymentMethod()
         {
             FileManager Fileobject = new FileManager();
             string configfile = Fileobject.FindFiles("*log4net.xml");
@@ -28,32 +28,14 @@ namespace ParseJson
             var urlocation = Fileobject.FindFiles("*Urls.json");
             DirectoryofURL URlobject = (DirectoryofURL)LeerJson.FileRequest(urlocation, "file");
 
-            CreateNewAccount register = new CreateNewAccount();
-            Contacts contacto = new Contacts();
-            register = contacto.NewAccount();
+            string filelocationDoAirPrice = Fileobject.FindFiles("*DoAirPrice.json");
 
-            string idusuario = null;
+            //DoPriceFee
+            string filelocationDoAirPriceFee = Fileobject.FindFiles("*DoPriceAndFee.json");
 
-            bool retry = false;
+            //DoBooking
+            string filelocationDoBooking = Fileobject.FindFiles("*DoBooking.json");
 
-            while (retry == false) {
-
-                if (idusuario == null || idusuario.Contains("E_SYSTEM") || idusuario.Contains("E_AVIOS"))
-                {
-                    register = null;
-                    register = contacto.NewAccount();
-                    idusuario = envio.SendArchivo(URlobject.URL[0].CreateAccount, register);
-                }
-                else {
-
-                    retry = true;
-                }
-
-
-            }            
-
-            log.Info("The User ID created is: " + idusuario);
-            Console.WriteLine("ID es:" + idusuario);
 
             log.Debug(string.Format("***** SERVICE FINALIZED: {0} *****", ApplicationID));
         }

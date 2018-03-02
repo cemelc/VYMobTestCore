@@ -183,7 +183,7 @@ namespace ParseJson
             
             BookingresponseObject = JsonConvert.DeserializeObject<DobookingResponse>(dobookingresponsestring);
             //Console.WriteLine("Response de Booking RecordLocator: " + BookingresponseObject.Success.RecordLocator);
-            Console.WriteLine("Response de Booking RecordLocator: " + BookingresponseObject.Success.RecordLocator);
+            Console.WriteLine("Response de Booking RecordLocator: " + dobookingresponsestring);
 
             log.Info("The record Locator is: " + BookingresponseObject.Success.RecordLocator);
 

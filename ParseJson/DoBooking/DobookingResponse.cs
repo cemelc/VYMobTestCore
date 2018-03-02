@@ -4,9 +4,10 @@ using ParseJson.DoBooking.BookingClasses;
 
 namespace ParseJson.DoBooking
 {
-    
+
     public class DobookingResponse
     {
+
         public Success Success { get; set; }
         public ChangeInfo ChangeInfo { get; set; }
         public CheckinValidations CheckinValidations { get; set; }

@@ -8,6 +8,9 @@ namespace ParseJson.DoBooking.BookingClasses
   
     public class PaxInfoList
     {
+        public PaxInfoList() {
+            PassengerFees = new List<PassengerFee>();
+        }
 
         public int Number { get; set; } 
         public string PaxType { get; set; }
@@ -34,21 +37,4 @@ namespace ParseJson.DoBooking.BookingClasses
 
     }
 }
-/*
-public class PaxInfoList
-{
-    public int Number { get; set; }
-    public string PaxType { get; set; }
-    public string Title { get; set; }
-    public DateTime DOB { get; set; }
-    public string Gender { get; set; }
-    public object Infant { get; set; }
-    public object PaxAddress { get; set; }
-    public List<object> TravelDocument { get; set; }
-    public string FirstName { get; set; }
-    public string LastName { get; set; }
-    public object LastName2 { get; set; }
-    public List<PassengerFee> PassengerFees { get; set; }
-    public object InfoResidentData { get; set; }
-}
-*/
+

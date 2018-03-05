@@ -7,7 +7,7 @@ using ParseJson.DoAirPriceFee;
 using ParseJson.DoAirPriceFee.DoAirPriceClasses;
 using ParseJson.DoBooking;
 using ParseJson.DoAirPrice;
-
+using System.Collections.Generic;
 
 namespace ParseJson
 {
@@ -23,6 +23,7 @@ namespace ParseJson
         {
             //Variables                
             var Date = DateTime.Now.AddDays(7);
+            var DateRe = DateTime.Now.AddDays(10);
             string doairpriceresponsestring = null, Doairpricefeeresponsestring = null, dobookingresponsestring = null, baseAddressDoAirPrice,
                    baseAddressDoAirPriceAndFee, baseAddressDoBooking;
 
@@ -35,7 +36,7 @@ namespace ParseJson
             DobookingResponse BookingresponseObject;
             DirectoryofURL fileURL;
             Contacts Contact = new Contacts();
-            Journey currentJourney = new Journey();
+            List<Journey> currentJourney = new List<Journey>();
             BuscarVuelo flightsearch = new BuscarVuelo();
             object Empty;
             FillSSR ssrcode = new FillSSR();           
@@ -94,6 +95,12 @@ namespace ParseJson
             Empty = LeerJson.FileRequest(filelocationDoAirPrice, "DoAirPrice");
             doairpricerequest = (DoAirPriceRequest)Empty;
             doairpricerequest.AirportDateTimeList[0].MarketDateDeparture = Date;
+
+            if (doairpricerequest.AirportDateTimeList[1].MarketDateDeparture != null)
+            {
+                doairpricerequest.AirportDateTimeList[1].MarketDateDeparture = DateRe;
+            }
+
             Empty = null;
 
             //Recepcción del request de do air price response
@@ -117,15 +124,24 @@ namespace ParseJson
 
             //Selección del vuelo que usaremos para la pruebas
             currentJourney = flightsearch.FindconnFlight(doAirPriceResponse);
-            log.Info("The journey picked is: " + currentJourney.JourneySellKey);
-            log.Info("The fare picked is:" + currentJourney.JourneyFare[0].JourneyFareKey);
+            log.Info("The journey picked is: " + currentJourney[0].JourneySellKey);
+            log.Info("The fare picked is:" + currentJourney[0].JourneyFare[0].JourneyFareKey);
+            log.Info("The journey picked is: " + currentJourney[1].JourneySellKey);
+            log.Info("The fare picked is:" + currentJourney[1].JourneyFare[0].JourneyFareKey);
 
             //DoPriceFee manipulación del objecto y envio de request
             Empty = LeerJson.FileRequest(filelocationDoAirPriceFee, "DoAirPriceFee");
             Doairpricefeerequest = (DoAirPriceFeeRequest)Empty;
             Empty = null;
-            Doairpricefeerequest.SellKeyList[0].FareKey = currentJourney.JourneyFare[0].JourneyFareKey;
-            Doairpricefeerequest.SellKeyList[0].JourneyKey = currentJourney.JourneySellKey;
+            Doairpricefeerequest.SellKeyList[0].FareKey = currentJourney[0].JourneyFare[0].JourneyFareKey;
+            Doairpricefeerequest.SellKeyList[0].JourneyKey = currentJourney[0].JourneySellKey;
+
+            if (currentJourney[1] != null)
+            {
+                Doairpricefeerequest.SellKeyList[1].FareKey = currentJourney[1].JourneyFare[0].JourneyFareKey;
+                Doairpricefeerequest.SellKeyList[1].JourneyKey = currentJourney[1].JourneySellKey;
+            }
+
             Doairpricefeerequest.PaxInfoList = doairpricerequest.Paxs;
 
             bool retry2 = false;
@@ -156,13 +172,12 @@ namespace ParseJson
             Empty = null;
 
             //Llenar los campos necesarios para crear el request de booking
-            BookingrequestObject.SellKeyList[0].JourneyKey = currentJourney.JourneySellKey;
-            BookingrequestObject.SellKeyList[0].FareKey = currentJourney.JourneyFare[0].JourneyFareKey;
+            BookingrequestObject.SellKeyList = Doairpricefeerequest.SellKeyList;           
             
             
             BookingrequestObject.SellKeyList[0].PaxSSRList = ssrcode.FillingSSr(doairpricerequest).PaxSSRList; 
-            BookingrequestObject.JourneyList[0] = currentJourney;
-            BookingrequestObject.segmentInfo = currentJourney.Segments;
+            BookingrequestObject.JourneyList = currentJourney;
+            //BookingrequestObject.segmentInfo.Add(currentJourney[0].Segments);
            
 
             //Paxinfolist
@@ -176,9 +191,6 @@ namespace ParseJson
 
             dobookingresponsestring = envio.SendArchivo(baseAddressDoBooking, BookingrequestObject);
            //string json = JsonConvert.SerializeObject(BookingrequestObject, Formatting.Indented);
-
-
-
 
             
             BookingresponseObject = JsonConvert.DeserializeObject<DobookingResponse>(dobookingresponsestring);

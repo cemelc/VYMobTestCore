@@ -45,9 +45,11 @@ namespace ParseJson
             return completeJourney;
         }
 
-        public Journey FinddirFlight(DoAirPriceResponse flightselector)
+        public List<Journey> FinddirFlight(DoAirPriceResponse flightselector)
         {
-            Journey firstBAonOutbound, firstBAonInbound;
+            Journey firstBAonOutbound = new Journey();
+            Journey firstBAonInbound = new Journey();
+            var completeJourney = new List<Journey>();
 
             firstBAonOutbound = flightselector.Trip.JourneyMarkets.First().Journeys.First(j => j.IsConnection == false && j.JourneyFare.First().ProductClass == "BA");
 
@@ -59,6 +61,7 @@ namespace ParseJson
                 firstBAonOutbound.JourneyFare.Remove(item);
             }
 
+            completeJourney.Add(firstBAonOutbound);
 
             if (flightselector.Trip.JourneyMarkets.Count > 1)
             {
@@ -70,11 +73,13 @@ namespace ParseJson
                     firstBAonInbound.JourneyFare.Remove(item);
                 }
 
-                firstBAonOutbound.JourneyFare.Add(firstBAonInbound.JourneyFare[0]);
-
+                completeJourney.Add(firstBAonInbound);
             }
 
-            return firstBAonOutbound;
+
+
+
+            return completeJourney;
         }
     }
 }

@@ -13,13 +13,13 @@ namespace ParseJson
 {
 
     [TestClass]
-    public class BasicBookingTest
+    public class DirFlightBookingTest
     {
         public static string ApplicationID = "Vueling.TestCore";
         public const string Env = "PRE";
 
         [TestMethod]
-        public void BasicBooking()
+        public void BasicDirBooking()
         {
             //Variables                
             var Date = DateTime.Now.AddDays(7);
@@ -123,7 +123,7 @@ namespace ParseJson
             doAirPriceResponse = JsonConvert.DeserializeObject<DoAirPriceResponse>(doairpriceresponsestring);
 
             //Selección del vuelo que usaremos para la pruebas
-            currentJourney = flightsearch.FindconnFlight(doAirPriceResponse);
+            currentJourney = flightsearch.FinddirFlight(doAirPriceResponse);
             log.Info("The journey picked is: " + currentJourney[0].JourneySellKey);
             log.Info("The fare picked is:" + currentJourney[0].JourneyFare[0].JourneyFareKey);
             log.Info("The journey picked is: " + currentJourney[1].JourneySellKey);

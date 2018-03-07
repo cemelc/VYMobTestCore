@@ -48,8 +48,6 @@ namespace ParseJson
 
                     retry = true;
                 }
-
-
             }            
 
             log.Info("The User ID created is: " + idusuario);

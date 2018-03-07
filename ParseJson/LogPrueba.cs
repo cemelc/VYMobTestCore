@@ -11,13 +11,13 @@ namespace ParseJson
     [TestClass]
     public class LoginTest
     {
-        public const string ApplicationID = "Vueling.Login";
-        public const string Env = "PRE";
+        public const string ApplicationID = "Vueling.Login";        
         //private static ILog log = LogManager.GetLogger(ApplicationID);
 
         [TestMethod]
         public void LoginExisting()
         {
+            string Env = "PRE";
             FileManager Fileobject = new FileManager();
             string configfile = Fileobject.FindFiles("*log4net.xml");         
             XmlConfigurator.Configure(Fileobject.LoadLog4netXmlDocument(configfile, Env, ApplicationID).DocumentElement);
@@ -53,7 +53,6 @@ namespace ParseJson
 
             while (retry == false)
             {
-
                 if (login == null || login.Contains("E_AVIOS") || login.Contains("E_SYSTEM"))
                 {
                     login = envio.SendArchivo(fileURL.URL[0].Login, loginReqObj);
@@ -65,7 +64,6 @@ namespace ParseJson
             }
 
             var loginObject = JsonConvert.DeserializeObject<LoginResponse>(login);
-
 
             log.Info("El mail del usuario es:" + loginObject.MemberData.Email);
             Console.WriteLine("El login esperado es:" + loginObject.MemberData.Email);

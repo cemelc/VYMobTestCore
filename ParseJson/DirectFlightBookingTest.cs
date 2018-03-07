@@ -16,16 +16,17 @@ namespace ParseJson
     public class DirFlightBookingTest
     {
         public static string ApplicationID = "Vueling.TestCore";
-        public const string Env = "PRE";
+        
 
         [TestMethod]
         public void BasicDirBooking()
         {
-            //Variables                
+            //Variables
+            string Env = "PRE";
             var Date = DateTime.Now.AddDays(7);
             var DateRe = DateTime.Now.AddDays(10);
-            string doairpriceresponsestring = null, Doairpricefeeresponsestring = null, dobookingresponsestring = null, baseAddressDoAirPrice,
-                   baseAddressDoAirPriceAndFee, baseAddressDoBooking;
+            string doairpriceresponsestring = null, Doairpricefeeresponsestring = null, dobookingresponsestring = null, baseAddressDoAirPrice = null,
+                   baseAddressDoAirPriceAndFee = null, baseAddressDoBooking = null;
 
             //Objetos usados en codigo
             DoAirPriceRequest doairpricerequest;
@@ -96,7 +97,7 @@ namespace ParseJson
             doairpricerequest = (DoAirPriceRequest)Empty;
             doairpricerequest.AirportDateTimeList[0].MarketDateDeparture = Date;
 
-            if (doairpricerequest.AirportDateTimeList[1].MarketDateDeparture != null)
+            if (doairpricerequest.AirportDateTimeList.Count>=2)
             {
                 doairpricerequest.AirportDateTimeList[1].MarketDateDeparture = DateRe;
             }
@@ -126,8 +127,12 @@ namespace ParseJson
             currentJourney = flightsearch.FinddirFlight(doAirPriceResponse);
             log.Info("The journey picked is: " + currentJourney[0].JourneySellKey);
             log.Info("The fare picked is:" + currentJourney[0].JourneyFare[0].JourneyFareKey);
-            log.Info("The journey picked is: " + currentJourney[1].JourneySellKey);
-            log.Info("The fare picked is:" + currentJourney[1].JourneyFare[0].JourneyFareKey);
+
+            if (currentJourney.Count >= 2)
+            {
+                log.Info("The journey picked is: " + currentJourney[1].JourneySellKey);
+                log.Info("The fare picked is:" + currentJourney[1].JourneyFare[0].JourneyFareKey);
+            }
 
             //DoPriceFee manipulación del objecto y envio de request
             Empty = LeerJson.FileRequest(filelocationDoAirPriceFee, "DoAirPriceFee");
@@ -136,7 +141,7 @@ namespace ParseJson
             Doairpricefeerequest.SellKeyList[0].FareKey = currentJourney[0].JourneyFare[0].JourneyFareKey;
             Doairpricefeerequest.SellKeyList[0].JourneyKey = currentJourney[0].JourneySellKey;
 
-            if (currentJourney[1] != null)
+            if (currentJourney.Count >= 2)
             {
                 Doairpricefeerequest.SellKeyList[1].FareKey = currentJourney[1].JourneyFare[0].JourneyFareKey;
                 Doairpricefeerequest.SellKeyList[1].JourneyKey = currentJourney[1].JourneySellKey;

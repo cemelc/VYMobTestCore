@@ -16,16 +16,17 @@ namespace ParseJson
     public class ConnFlightBookingTest
     {
         public static string ApplicationID = "Vueling.TestCore";
-        public const string Env = "PRE";
+        
 
         [TestMethod]
         public void BasicConnBooking()
         {
-            //Variables                
+            //Variables
+            string Env = "PRE";
             var Date = DateTime.Now.AddDays(7);
             var DateRe = DateTime.Now.AddDays(10);
-            string doairpriceresponsestring = null, Doairpricefeeresponsestring = null, dobookingresponsestring = null, baseAddressDoAirPrice,
-                   baseAddressDoAirPriceAndFee, baseAddressDoBooking;
+            string doairpriceresponsestring = null, Doairpricefeeresponsestring = null, dobookingresponsestring = null, baseAddressDoAirPrice = null,
+                   baseAddressDoAirPriceAndFee = null, baseAddressDoBooking = null;
 
             //Objetos usados en codigo
             DoAirPriceRequest doairpricerequest;
@@ -39,7 +40,7 @@ namespace ParseJson
             List<Journey> currentJourney = new List<Journey>();
             BuscarVuelo flightsearch = new BuscarVuelo();
             object Empty;
-            FillSSR ssrcode = new FillSSR();           
+            FillSSR ssrcode = new FillSSR();
             FileManager Fileobject = new FileManager();
 
             //Buscar archivos para la prueba
@@ -47,7 +48,7 @@ namespace ParseJson
             var whatever = Fileobject.LoadLog4netXmlDocument(configfile, Env, ApplicationID).DocumentElement;
             Console.WriteLine(whatever);
             XmlConfigurator.Configure(whatever);
-            var log = LogManager.GetLogger(ApplicationID);            
+            var log = LogManager.GetLogger(ApplicationID);
 
             //Initcializar los logs
             log.Debug(string.Format("***** SERVICE INITIALIZED: {0} *****", ApplicationID));
@@ -96,7 +97,7 @@ namespace ParseJson
             doairpricerequest = (DoAirPriceRequest)Empty;
             doairpricerequest.AirportDateTimeList[0].MarketDateDeparture = Date;
 
-            if (doairpricerequest.AirportDateTimeList[1].MarketDateDeparture != null)
+            if (doairpricerequest.AirportDateTimeList.Count >= 2)
             {
                 doairpricerequest.AirportDateTimeList[1].MarketDateDeparture = DateRe;
             }
@@ -119,15 +120,19 @@ namespace ParseJson
                 }
             }
 
-            
+
             doAirPriceResponse = JsonConvert.DeserializeObject<DoAirPriceResponse>(doairpriceresponsestring);
 
             //Selección del vuelo que usaremos para la pruebas
             currentJourney = flightsearch.FindconnFlight(doAirPriceResponse);
             log.Info("The journey picked is: " + currentJourney[0].JourneySellKey);
             log.Info("The fare picked is:" + currentJourney[0].JourneyFare[0].JourneyFareKey);
-            log.Info("The journey picked is: " + currentJourney[1].JourneySellKey);
-            log.Info("The fare picked is:" + currentJourney[1].JourneyFare[0].JourneyFareKey);
+
+            if (currentJourney.Count >= 2)
+            {
+                log.Info("The journey picked is: " + currentJourney[1].JourneySellKey);
+                log.Info("The fare picked is:" + currentJourney[1].JourneyFare[0].JourneyFareKey);
+            }
 
             //DoPriceFee manipulación del objecto y envio de request
             Empty = LeerJson.FileRequest(filelocationDoAirPriceFee, "DoAirPriceFee");
@@ -136,7 +141,7 @@ namespace ParseJson
             Doairpricefeerequest.SellKeyList[0].FareKey = currentJourney[0].JourneyFare[0].JourneyFareKey;
             Doairpricefeerequest.SellKeyList[0].JourneyKey = currentJourney[0].JourneySellKey;
 
-            if (currentJourney[1] != null)
+            if (currentJourney.Count >= 2)
             {
                 Doairpricefeerequest.SellKeyList[1].FareKey = currentJourney[1].JourneyFare[0].JourneyFareKey;
                 Doairpricefeerequest.SellKeyList[1].JourneyKey = currentJourney[1].JourneySellKey;
@@ -160,7 +165,7 @@ namespace ParseJson
             }
 
 
-            
+
 
             //Llenado de objecto de respuesta del DoAirPRice
             DoAirPriceAndFeeResponseObjecto = JsonConvert.DeserializeObject<DoAirPriceFeeResponse>(Doairpricefeeresponsestring);
@@ -172,13 +177,13 @@ namespace ParseJson
             Empty = null;
 
             //Llenar los campos necesarios para crear el request de booking
-            BookingrequestObject.SellKeyList = Doairpricefeerequest.SellKeyList;           
-            
-            
-            BookingrequestObject.SellKeyList[0].PaxSSRList = ssrcode.FillingSSr(doairpricerequest).PaxSSRList; 
+            BookingrequestObject.SellKeyList = Doairpricefeerequest.SellKeyList;
+
+
+            BookingrequestObject.SellKeyList[0].PaxSSRList = ssrcode.FillingSSr(doairpricerequest).PaxSSRList;
             BookingrequestObject.JourneyList = currentJourney;
             //BookingrequestObject.segmentInfo.Add(currentJourney[0].Segments);
-           
+
 
             //Paxinfolist
             var BookingrequestObjectaux = Contact.FillPaxInfo(doairpricerequest);
@@ -190,9 +195,9 @@ namespace ParseJson
             //DoBookin              
 
             dobookingresponsestring = envio.SendArchivo(baseAddressDoBooking, BookingrequestObject);
-           //string json = JsonConvert.SerializeObject(BookingrequestObject, Formatting.Indented);
+            //string json = JsonConvert.SerializeObject(BookingrequestObject, Formatting.Indented);
 
-            
+
             BookingresponseObject = JsonConvert.DeserializeObject<DobookingResponse>(dobookingresponsestring);
             //Console.WriteLine("Response de Booking RecordLocator: " + BookingresponseObject.Success.RecordLocator);
             Console.WriteLine("Response de Booking RecordLocator: " + dobookingresponsestring);

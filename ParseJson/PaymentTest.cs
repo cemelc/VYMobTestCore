@@ -12,7 +12,7 @@ namespace ParseJson
 {
 
     [TestClass]
-    public class PaymentMethodsTest
+    public class PaymentTest
     {
         public const string ApplicationID = "Vueling.PaymentMethod";
        

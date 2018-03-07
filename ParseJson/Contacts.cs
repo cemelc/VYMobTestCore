@@ -89,8 +89,8 @@ namespace ParseJson
             fillingobject.Number = contador;
             fillingobject.PaxType = "ADT";
             fillingobject.Title = "Mr";
-            fillingobject.FirstName = "Pasajero Aut Name " + RandomGenerator.RandomString(5, 2);
-            fillingobject.LastName = "Pasajero Aut LastName " + RandomGenerator.RandomString(6, 2);
+            fillingobject.FirstName = "Name " + RandomGenerator.RandomString(5, 2);
+            fillingobject.LastName = "LastName " + RandomGenerator.RandomString(6, 2);
             fillingobject.Gender = "Male";
             fillingobject.isFrequent = false;
             fillingobject.frequentOrder = null;
@@ -114,8 +114,8 @@ namespace ParseJson
                         Number = last,
                         PaxType = "INF",
                         PaxNumber = paxcount,
-                        FirstName = "Bebe Aut Name" + RandomGenerator.RandomString(5, 2),
-                        LastName = "Bebe Aut LastName" + RandomGenerator.RandomString(5, 2),
+                        FirstName = "Bebe Name" + RandomGenerator.RandomString(5, 2),
+                        LastName = "Bebe LastName" + RandomGenerator.RandomString(5, 2),
                         OrderView = 3,
                         Type = 4,
                         isFrequent = false,

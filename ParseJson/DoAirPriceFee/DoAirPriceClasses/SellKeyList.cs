@@ -7,6 +7,11 @@ namespace ParseJson.DoAirPriceFee.DoAirPriceClasses
 {
     public class SellKeyList
     {
+        public SellKeyList()
+        {
+            PaxSSRList = new List<PaxSSRList>();
+        }
+
         public string FareKey { get; set; }
         public string JourneyKey { get; set; }
         public object OldJourneyKey { get; set; }

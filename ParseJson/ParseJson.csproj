@@ -62,7 +62,12 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CreateAccount.cs" />
+    <Compile Include="DirectFlightBookingTest.cs" />
+    <Compile Include="DoBooking\BookingClasses\PaymentHelper.cs" />
+    <Compile Include="DoBooking\PaymentEnviroment.cs" />
+    <Compile Include="PaymentMethod.cs" />
+    <Compile Include="PaymentMethodsTest.cs" />
+    <Compile Include="CreateAccountTest.cs" />
     <Compile Include="Login\CreateAccount.cs" />
     <Compile Include="Login\LoginClasses\CustomerProgram.cs" />
     <Compile Include="Login\LoginClasses\FamNumData.cs" />
@@ -153,13 +158,16 @@
     <Compile Include="RandomGenerator.cs" />
     <Compile Include="SendFile.cs" />
     <Compile Include="DoAirPrice\DoAirPriceClasses\Trip.cs" />
-    <Compile Include="BasicBooking.cs" />
+    <Compile Include="ConnFlightBookingTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DoAirPriceFee\DoAirPriceClasses\VipRoomFee.cs" />
     <Compile Include="URL\URL.cs" />
     <Compile Include="URL\DirectoryofURL.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Files\PaymentMethods.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Files\Urls.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

@@ -1,0 +1,134 @@
+{
+  "INV": [
+    {
+      "AccountNumber": "5210000010001001",
+      "Expiration": "01/2020",
+      "PaymentAddresses": "",
+      "PaymentFieldsList": [
+        {
+          "Name": "CC::VerificationCode",
+          "Value": "123"
+        },
+        {
+          "Name": "CC::AccountHolderName",
+          "Value": "AUT Test"
+        }
+      ],
+      "PaymentMethodCode": "MC",
+      "PaymentMethodType": "",
+      "QuotedCurrencyCode": "EUR"
+    },
+    {
+      "PaymentMethodType": null,
+      "PaymentMethodCode": "IA",
+      "QuotedCurrencyCode": "EUR",
+      "QuotedAmount": 100,
+      "AccountNumber": "",
+      "Expiration": "",
+      "PaymentAddresses": "",
+      "IssuerId": "1154",
+      "PaymentFieldsList": [
+        {
+          "Name": "iDealData::Language",
+          "Value": "es"
+        },
+        {
+          "Name": "CountryCode",
+          "Value": "NL"
+        },
+        {
+          "Name": "ADYEN::IssuerID",
+          "Value": "1154"
+        }
+      ]
+    }
+  ],
+  "PRE": [
+    {
+      "AccountNumber": "5210000010001001",
+      "Expiration": "01/2020",
+      "PaymentAddresses": "",
+      "PaymentFieldsList": [
+        {
+          "Name": "CC::VerificationCode",
+          "Value": "123"
+        },
+        {
+          "Name": "CC::AccountHolderName",
+          "Value": "AUT Test"
+        }
+      ],
+      "PaymentMethodCode": "MC",
+      "PaymentMethodType": "",
+      "QuotedCurrencyCode": "EUR"
+    },
+    {
+      "PaymentMethodType": null,
+      "PaymentMethodCode": "IA",
+      "QuotedCurrencyCode": "EUR",
+      "QuotedAmount": 100,
+      "AccountNumber": "",
+      "Expiration": "",
+      "PaymentAddresses": "",
+      "IssuerId": "1154",
+      "PaymentFieldsList": [
+        {
+          "Name": "iDealData::Language",
+          "Value": "es"
+        },
+        {
+          "Name": "CountryCode",
+          "Value": "NL"
+        },
+        {
+          "Name": "ADYEN::IssuerID",
+          "Value": "1154"
+        }
+      ]
+    }
+  ],
+  "PRO": [
+    {
+      "AccountNumber": "5210000010001001",
+      "Expiration": "01/2020",
+      "PaymentAddresses": "",
+      "PaymentFieldsList": [
+        {
+          "Name": "CC::VerificationCode",
+          "Value": "123"
+        },
+        {
+          "Name": "CC::AccountHolderName",
+          "Value": "AUT Test"
+        }
+      ],
+      "PaymentMethodCode": "MC",
+      "PaymentMethodType": "",
+      "QuotedCurrencyCode": "EUR"
+    },
+    {
+      "PaymentMethodType": null,
+      "PaymentMethodCode": "IA",
+      "QuotedCurrencyCode": "EUR",
+      "QuotedAmount": 100,
+      "AccountNumber": "",
+      "Expiration": "",
+      "PaymentAddresses": "",
+      "IssuerId": "1154",
+      "PaymentFieldsList": [
+        {
+          "Name": "iDealData::Language",
+          "Value": "es"
+        },
+        {
+          "Name": "CountryCode",
+          "Value": "NL"
+        },
+        {
+          "Name": "ADYEN::IssuerID",
+          "Value": "1154"
+        }
+      ]
+    }
+  ]
+}

@@ -7,7 +7,6 @@ namespace ParseJson
     class RandomGenerator
     {
         private static Random random = new Random();
-        String text = "";
         public static string RandomString(int length, int type)
         {
             string text = string.Empty;

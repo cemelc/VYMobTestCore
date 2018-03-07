@@ -9,11 +9,11 @@
       "PaxType": "ADT"
     },
     {
-      "Quantity": 1,
+      "Quantity": 0,
       "PaxType": "CHD"
     },
     {
-      "Quantity": 1,
+      "Quantity": 0,
       "PaxType": "INF"
     }
   ],

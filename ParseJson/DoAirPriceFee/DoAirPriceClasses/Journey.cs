@@ -4,9 +4,17 @@ using System.Collections.Generic;
 using ParseJson.DoBooking.BookingClasses;
 
 namespace ParseJson.DoAirPriceFee.DoAirPriceClasses
-{  
-     public class Journey
+{
+    public class Journey
+    {
+
+        public Journey()
         {
+            Segments = new List<Segment>();
+            JourneyFare = new List<JourneyFare>();
+            PriceClassMap = new List<PriceClassMap>();
+        }
+
             public string JourneySellKey { get; set; }
             public string DepartureStation { get; set; }
             public string ArrivalStation { get; set; }

@@ -63,26 +63,56 @@
       "QuotedCurrencyCode": "EUR"
     },
     {
-      "PaymentMethodType": null,
-      "PaymentMethodCode": "IA",
-      "QuotedCurrencyCode": "EUR",
-      "QuotedAmount": 100,
-      "AccountNumber": "",
-      "Expiration": "",
+      "AccountNumber": "370000000000002",
+      "Expiration": "10/2020",
       "PaymentAddresses": "",
-      "IssuerId": "1154",
       "PaymentFieldsList": [
         {
-          "Name": "iDealData::Language",
-          "Value": "es"
+          "Name": "CC::VerificationCode",
+          "Value": "7373"
         },
         {
-          "Name": "CountryCode",
-          "Value": "NL"
+          "Name": "CC::AccountHolderName",
+          "Value": "aut"
+        }
+      ],
+      "PaymentMethodCode": "AE",
+      "PaymentMethodType": null,
+      "QuotedCurrencyCode": "EUR"
+    },
+    {
+      "PaymentMethodType": null,
+      "PaymentMethodCode": "DI",
+      "QuotedCurrencyCode": "EUR",
+      "AccountNumber": "30123400000000",
+      "Expiration": "10/2020",
+      "PaymentAddresses": "",
+      "PaymentFieldsList": [
+        {
+          "Name": "CC::VerificationCode",
+          "Value": "123"
         },
         {
-          "Name": "ADYEN::IssuerID",
-          "Value": "1154"
+          "Name": "CC::AccountHolderName",
+          "Value": "test"
+        }
+      ]
+    },
+    {
+      "PaymentMethodType": null,
+      "PaymentMethodCode": "VE",
+      "QuotedCurrencyCode": "EUR",
+      "AccountNumber": "4111111111111111",
+      "Expiration": "10/2020",
+      "PaymentAddresses": "",
+      "PaymentFieldsList": [
+        {
+          "Name": "CC::VerificationCode",
+          "Value": "737"
+        },
+        {
+          "Name": "CC::AccountHolderName",
+          "Value": "test"
         }
       ]
     }

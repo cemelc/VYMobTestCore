@@ -45,7 +45,7 @@
   ],
   "PRE": [
     {
-      "AccountNumber": "5210000010001001",//bien
+      "AccountNumber": "5210000010001001",
       "Expiration": "01/2020",
       "PaymentAddresses": "",
       "PaymentFieldsList": [

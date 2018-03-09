@@ -193,7 +193,7 @@ namespace ParseJson
 
             //Choosing payment method
             PaymentMethod PaymentInfoObject = new PaymentMethod();
-            BookingrequestObject.PaymentData = PaymentInfoObject.Payment("VE", Env);
+            BookingrequestObject.PaymentData = PaymentInfoObject.Payment("VE", Env); // why
 
             //DoBookin              
             /*if (BookingrequestObject.PaymentData.PaymentFieldsList[1].Name.Contains("AccountHolderName"))

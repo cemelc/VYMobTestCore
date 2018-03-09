@@ -17,9 +17,9 @@ namespace ParseJson
         {
             BookingContact Contact = new BookingContact();
             Contact = actualcontact.BookingContact;
-            Contact.FirstName = "Contact Aut Name " + RandomGenerator.RandomString(5, 2);
-            Contact.LastName = "Contact Aut Apellido " + RandomGenerator.RandomString(6, 2);
-            Contact.EmailAddress = "email.aut" + (RandomGenerator.RandomString(5, 1) + "@" + "gmail" + "." + "com");
+            Contact.FirstName = "ConName " + RandomGenerator.RandomString(5, 2);
+            Contact.LastName = "ConApellido " + RandomGenerator.RandomString(6, 2);
+            Contact.EmailAddress = "aut" + (RandomGenerator.RandomString(5, 1) + "@" + "gmail" + "." + "com");
 
             return Contact;
         }
@@ -89,8 +89,8 @@ namespace ParseJson
             fillingobject.Number = contador;
             fillingobject.PaxType = "ADT";
             fillingobject.Title = "Mr";
-            fillingobject.FirstName = "Name " + RandomGenerator.RandomString(5, 2);
-            fillingobject.LastName = "LastName " + RandomGenerator.RandomString(6, 2);
+            fillingobject.FirstName = "AName " + RandomGenerator.RandomString(5, 2);
+            fillingobject.LastName = "ALastName " + RandomGenerator.RandomString(6, 2);
             fillingobject.Gender = "Male";
             fillingobject.isFrequent = false;
             fillingobject.frequentOrder = null;
@@ -114,8 +114,8 @@ namespace ParseJson
                         Number = last,
                         PaxType = "INF",
                         PaxNumber = paxcount,
-                        FirstName = "Bebe Name" + RandomGenerator.RandomString(5, 2),
-                        LastName = "Bebe LastName" + RandomGenerator.RandomString(5, 2),
+                        FirstName = "BName" + RandomGenerator.RandomString(5, 2),
+                        LastName = "BLastName" + RandomGenerator.RandomString(5, 2),
                         OrderView = 3,
                         Type = 4,
                         isFrequent = false,
@@ -145,8 +145,8 @@ namespace ParseJson
             newUser.Udid = "\"6979-5271-f146-5b16-421f-d63c\"";
             newUser.IP = "235.231.34.152";
             newUser.AirportOrigin = "BCN";
-            newUser.Name = "Pasajero Aut Name " + RandomGenerator.RandomString(5, 2);
-            newUser.LastName = "Pasajero Aut LastName " + RandomGenerator.RandomString(6, 2);
+            newUser.Name = "PName " + RandomGenerator.RandomString(5, 2);
+            newUser.LastName = "PLastName " + RandomGenerator.RandomString(6, 2);
             newUser.Password = "Au!" + RandomGenerator.RandomString(6, 3);
             newUser.SubscribeToNewsletter = false;
             newUser.Email = "email.aut" + (RandomGenerator.RandomString(5, 1) + "@" + "gmail" + "." + "com");

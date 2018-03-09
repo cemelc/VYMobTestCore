@@ -39,7 +39,7 @@ namespace ParseJson
                     {
                         if (item.PaymentMethodCode == type)
                         {
-                            selectedmethod = item;
+                            selectedmethod = item;/ right
                         }
                     }
                     break;

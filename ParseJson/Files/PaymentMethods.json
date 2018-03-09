@@ -63,6 +63,26 @@
       "QuotedCurrencyCode": "EUR"
     },
     {
+      "AccountNumber": "4111111111111111",
+      "Expiration": "2020-10-27T13:00:00",
+      "PaymentAddresses": null,
+      "PaymentFieldsList": [
+        {
+          "Name": "CC::VerificationCode",
+          "Value": "737"
+        },
+        {
+          "Name": "CC::AccountHolderName",
+          "Value": "ConName ljsao ConApellido basd"
+        }
+      ],
+      "PaymentMethodCode": "VE",
+      "PaymentMethodType": null,
+      "PaymentToken": "",
+      "QuotedAmount": 100,
+      "QuotedCurrencyCode": "EUR"
+    },
+    {
       "PaymentMethodType": null,
       "PaymentMethodCode": "IA",
       "QuotedCurrencyCode": "EUR",

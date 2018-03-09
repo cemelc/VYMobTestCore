@@ -193,10 +193,13 @@ namespace ParseJson
 
             //Choosing payment method
             PaymentMethod PaymentInfoObject = new PaymentMethod();
-            BookingrequestObject.PaymentData = PaymentInfoObject.Payment("MC", Env);
+            BookingrequestObject.PaymentData = PaymentInfoObject.Payment("VE", Env);
 
             //DoBookin              
-
+            /*if (BookingrequestObject.PaymentData.PaymentFieldsList[1].Name.Contains("AccountHolderName"))
+            {
+                BookingrequestObject.PaymentData.PaymentFieldsList[1].Value = BookingrequestObject.BookingContact.FirstName + " " +BookingrequestObject.BookingContact.LastName;
+            }*/
             dobookingresponsestring = envio.SendArchivo(baseAddressDoBooking, BookingrequestObject);
             //string json = JsonConvert.SerializeObject(BookingrequestObject, Formatting.Indented);
 

@@ -22,6 +22,9 @@ namespace ParseJson
             httpWebRequest.ContentType = "application/json";
             httpWebRequest.Accept = "application/json";
             httpWebRequest.Method = "POST";
+            httpWebRequest.Referer = "no-referrer-when-downgrade";
+            
+
             if (baseAddress.Contains("Login")|| baseAddress.Contains("CreateAccount"))
             {
                 httpWebRequest.Timeout = 1000000;

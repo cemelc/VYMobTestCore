@@ -142,6 +142,7 @@ namespace ParseJson
 
             if (currentJourney.Count >= 2)
             {
+                Doairpricefeerequest.SellKeyList.Add(new SellKeyList());
                 Doairpricefeerequest.SellKeyList[1].FareKey = currentJourney[1].JourneyFare[0].JourneyFareKey;
                 Doairpricefeerequest.SellKeyList[1].JourneyKey = currentJourney[1].JourneySellKey;
             }
@@ -193,8 +194,7 @@ namespace ParseJson
 
             //Choosing payment method
             PaymentMethod PaymentInfoObject = new PaymentMethod();
-            BookingrequestObject.PaymentData = PaymentInfoObject.Payment("MC", Env); // why
-
+            BookingrequestObject.PaymentData = PaymentInfoObject.Payment("VE", Env); 
             //DoBookin              
             /*if (BookingrequestObject.PaymentData.PaymentFieldsList[1].Name.Contains("AccountHolderName"))
             {

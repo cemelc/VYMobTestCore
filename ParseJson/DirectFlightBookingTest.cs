@@ -143,6 +143,7 @@ namespace ParseJson
 
             if (currentJourney.Count >= 2)
             {
+                Doairpricefeerequest.SellKeyList.Add(new SellKeyList());
                 Doairpricefeerequest.SellKeyList[1].FareKey = currentJourney[1].JourneyFare[0].JourneyFareKey;
                 Doairpricefeerequest.SellKeyList[1].JourneyKey = currentJourney[1].JourneySellKey;
             }

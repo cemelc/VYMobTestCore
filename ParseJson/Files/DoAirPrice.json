@@ -9,11 +9,11 @@
       "PaxType": "ADT"
     },
     {
-      "Quantity": 0,
+      "Quantity": 1,
       "PaxType": "CHD"
     },
     {
-      "Quantity": 0,
+      "Quantity": 1,
       "PaxType": "INF"
     }
   ],
@@ -22,6 +22,11 @@
     {
       "DepartureStation": "LGW",
       "ArrivalStation": "BCN",
+      "MarketDateDeparture": "2018-02-07"
+    },
+    {
+      "DepartureStation": "BCN",
+      "ArrivalStation": "LGW",
       "MarketDateDeparture": "2018-02-07"
     }
   ]

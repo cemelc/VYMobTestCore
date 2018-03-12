@@ -73,13 +73,34 @@
         },
         {
           "Name": "CC::AccountHolderName",
-          "Value": "ConName ljsao ConApellido basd"
+          "Value": "ConName  ConApellido"
+        },
+        {
+          "Name": "CountryCode",
+          "Value": "NL"
         }
       ],
       "PaymentMethodCode": "VE",
       "PaymentMethodType": null,
       "PaymentToken": "",
-      "QuotedAmount": 100,
+      "QuotedCurrencyCode": "EUR"
+    },
+    {
+      "AccountNumber": "370000000000002",
+      "Expiration": "10/2020",
+      "PaymentAddresses": "",
+      "PaymentFieldsList": [
+        {
+          "Name": "CC::VerificationCode",
+          "Value": "7373"
+        },
+        {
+          "Name": "CC::AccountHolderName",
+          "Value": "AUT Test"
+        }
+      ],
+      "PaymentMethodCode": "AE",
+      "PaymentMethodType": "",
       "QuotedCurrencyCode": "EUR"
     },
     {

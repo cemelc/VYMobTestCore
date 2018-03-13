@@ -182,6 +182,16 @@ namespace ParseJson
 
 
             BookingrequestObject.SellKeyList[0].PaxSSRList = ssrcode.FillingSSr(doairpricerequest).PaxSSRList;
+
+            if (currentJourney.Count >= 2)
+            {
+                BookingrequestObject.SellKeyList[1].PaxSSRList.Add(new DoBooking.BookingClasses.PaxSSRList());
+                BookingrequestObject.SellKeyList[1].PaxSSRList = ssrcode.FillingSSr(doairpricerequest).PaxSSRList;
+            }
+
+
+
+
             BookingrequestObject.JourneyList = currentJourney;
             //BookingrequestObject.segmentInfo.Add(currentJourney[0].Segments);
 

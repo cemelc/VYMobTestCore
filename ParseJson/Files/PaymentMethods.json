@@ -1,5 +1,5 @@
 {
-  "INV": [
+  "INT": [
     {
       "AccountNumber": "5210000010001001",
       "Expiration": "01/2020",
@@ -63,8 +63,8 @@
       "QuotedCurrencyCode": "EUR"
     },
     {
-      "AccountNumber": "4111111111111111",
-      "Expiration": "2020-10-27T13:00:00",
+      "AccountNumber": "4988438843884305",
+      "Expiration": "10/2020",
       "PaymentAddresses": null,
       "PaymentFieldsList": [
         {
@@ -74,10 +74,6 @@
         {
           "Name": "CC::AccountHolderName",
           "Value": "ConName  ConApellido"
-        },
-        {
-          "Name": "CountryCode",
-          "Value": "NL"
         }
       ],
       "PaymentMethodCode": "VE",
@@ -104,28 +100,22 @@
       "QuotedCurrencyCode": "EUR"
     },
     {
-      "PaymentMethodType": null,
-      "PaymentMethodCode": "IA",
-      "QuotedCurrencyCode": "EUR",
-      "QuotedAmount": 100,
-      "AccountNumber": "",
-      "Expiration": "",
+      "AccountNumber": "6011601160116611",
+      "Expiration": "08/2018",
       "PaymentAddresses": "",
-      "IssuerId": "1154",
       "PaymentFieldsList": [
         {
-          "Name": "iDealData::Language",
-          "Value": "es"
+          "Name": "CC::VerificationCode",
+          "Value": "737"
         },
         {
-          "Name": "CountryCode",
-          "Value": "NL"
-        },
-        {
-          "Name": "ADYEN::IssuerID",
-          "Value": "1154"
+          "Name": "CC::AccountHolderName",
+          "Value": "Yo mismo"
         }
-      ]
+      ],
+      "PaymentMethodCode": "DS",
+      "PaymentMethodType": null,
+      "QuotedCurrencyCode": "EUR"
     }
   ],
   "PRO": [

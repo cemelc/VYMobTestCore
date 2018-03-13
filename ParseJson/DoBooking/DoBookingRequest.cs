@@ -14,8 +14,8 @@ namespace ParseJson.DoBooking
         public List<PaxInfoList> PaxInfoList { get; set; }
         public List<object> SeatInfoList { get; set; }
         public List<object> BagInfoList { get; set; }
-        public List<object> VipRoom { get; set; }
-        public List<object> Insurance { get; set; }
+        public List<VipRoomRequest> VipRoom { get; set; }
+        public List<InsuranceRequest> Insurance { get; set; }
         public string CurrencyCode { get; set; }
         public BookingContact BookingContact { get; set; }
         public PaymentData PaymentData { get; set; }

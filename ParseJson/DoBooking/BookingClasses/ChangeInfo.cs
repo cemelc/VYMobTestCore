@@ -12,13 +12,13 @@ namespace ParseJson.DoBooking.BookingClasses
         public PetAllowed PetAllowed { get; set; }
         public SpecialEquipment SpecialEquipment { get; set; }
         public Atv Atv { get; set; }
-        public VipRoom VipRoom { get; set; }
+        public VipRoomResponse VipRoom { get; set; }
         public HotelsAndCars HotelsAndCars { get; set; }
         public AddToCalendar AddToCalendar { get; set; }
         public ProcliPaxes ProcliPaxes { get; set; }
         public Contingencies Contingencies { get; set; }
         public NotAllowedBooking NotAllowedBooking { get; set; }
-        public Insurance Insurance { get; set; }
+        public InsuranceResponse Insurance { get; set; }
         public YaAccess YaAccess { get; set; }
     }
 }

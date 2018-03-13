@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace ParseJson.DoBooking.BookingClasses
 {
-    public class Insurance
+    public class InsuranceResponse
     {
         public bool Active { get; set; }
         public bool Hide { get; set; }
@@ -16,5 +16,11 @@ namespace ParseJson.DoBooking.BookingClasses
         public string ButtonTitle { get; set; }
         public string HeaderTitle { get; set; }
         public bool IsNewLogoActive { get; set; }
+    }
+
+    public class InsuranceRequest
+    {
+            public List<int> passengerNumbers { get; set; }
+            public string code { get; set; }        
     }
 }

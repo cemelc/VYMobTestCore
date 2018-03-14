@@ -164,9 +164,6 @@ namespace ParseJson
                 }
             }
 
-
-
-
             //Llenado de objecto de respuesta del DoAirPRice
             DoAirPriceAndFeeResponseObjecto = JsonConvert.DeserializeObject<DoAirPriceFeeResponse>(Doairpricefeeresponsestring);
             Console.WriteLine("Resultado JourneySellKey del price and fee: " + DoAirPriceAndFeeResponseObjecto.Price.JourneysPrice[0].JourneySellKey);
@@ -194,7 +191,7 @@ namespace ParseJson
 
             //Choosing payment method
             PaymentMethod PaymentInfoObject = new PaymentMethod();
-            BookingrequestObject.PaymentData = PaymentInfoObject.Payment("AE", Env); 
+            BookingrequestObject.PaymentData = PaymentInfoObject.Payment("DS", Env); 
             //DoBookin              
 
             dobookingresponsestring = envio.SendArchivo(baseAddressDoBooking, BookingrequestObject);

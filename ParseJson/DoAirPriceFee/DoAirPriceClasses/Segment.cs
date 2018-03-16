@@ -7,6 +7,11 @@ namespace ParseJson.DoAirPriceFee.DoAirPriceClasses
 {
     public class Segment
     {
+        public Segment()
+        {
+            List<Fare> Fares = new List<Fare>();
+        }
+
         public bool IsInternational { get; set; }
         public string SegmentSellKey { get; set; }
         public string DepartureStation { get; set; }

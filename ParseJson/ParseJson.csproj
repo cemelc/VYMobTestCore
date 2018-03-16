@@ -66,6 +66,8 @@
     <Compile Include="DoBooking\BookingClasses\PaymentHelper.cs" />
     <Compile Include="DoBooking\PaymentEnviroment.cs" />
     <Compile Include="PaymentMethod.cs" />
+    <Compile Include="VipRoomFunctions.cs" />
+    <Compile Include="VipRoomTest.cs" />
     <Compile Include="PaymentTest.cs" />
     <Compile Include="CreateAccountTest.cs" />
     <Compile Include="Login\CreateAccount.cs" />

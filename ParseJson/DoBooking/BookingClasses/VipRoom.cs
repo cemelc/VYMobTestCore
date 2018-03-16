@@ -16,11 +16,21 @@ namespace ParseJson.DoBooking.BookingClasses
         public string ButtonTitle { get; set; }
         public string HeaderTitle { get; set; }
         public bool IsNewLogoActive { get; set; }
+
     }
+
 
     public class VipRoomRequest
     {
-            public string StationCode { get; set; }
+
+        public VipRoomRequest()
+        {
+
+            PassengerNumbers = new List<int>();
+
+        }
+
+        public string StationCode { get; set; }
             public string SegmentSellKey { get; set; }
             public List<int> PassengerNumbers { get; set; }
             public string code { get; set; }

@@ -12,13 +12,13 @@ namespace ParseJson
 {
 
     [TestClass]
-    public class PaymentTest
+    public class VipRoomTest
     {
-        public const string ApplicationID = "Vueling.PaymentMethod";
+        public const string ApplicationID = "Vueling.VipRoom";
        
 
         [TestMethod]
-        public void PaymentMethod()
+        public void VipRoom()
         {
             //Variables
             string Env = "PRE";
@@ -187,7 +187,10 @@ namespace ParseJson
             BookingrequestObject.PaxInfoList = BookingrequestObjectaux.PaxInfoList;
 
             //BookingInfoList
+            VipRoomFunctions vipobject = new VipRoomFunctions();
             BookingrequestObject.BookingContact = Contact.FillContact(BookingrequestObject);
+            BookingrequestObject.VipRoom = vipobject.FillVipRoom(currentJourney, 3, DoAirPriceAndFeeResponseObjecto);
+
 
             //Choosing payment method
             PaymentMethod PaymentInfoObject = new PaymentMethod();

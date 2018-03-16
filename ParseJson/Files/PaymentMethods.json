@@ -63,20 +63,20 @@
       "QuotedCurrencyCode": "EUR"
     },
     {
-      "AccountNumber": "4548819406543219",
-      "Expiration": "08/2018",
+      "AccountNumber": "30123400000000",
+      "Expiration": "06/2022",
       "PaymentAddresses": null,
       "PaymentFieldsList": [
         {
           "Name": "CC::VerificationCode",
-          "Value": "123"
+          "Value": "737"
         },
         {
           "Name": "CC::AccountHolderName",
           "Value": "ConName  ConApellido"
         }
       ],
-      "PaymentMethodCode": "VE",
+      "PaymentMethodCode": "UA",
       "PaymentMethodType": null,
       "PaymentToken": "",
       "QuotedCurrencyCode": "EUR"

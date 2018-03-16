@@ -35,7 +35,7 @@ namespace ParseJson
             string idusuario = null;
 
             bool retry = false;
-
+            int i = 0;
             while (retry == false) {
 
                 if (idusuario == null || idusuario.Contains("E_SYSTEM") || idusuario.Contains("E_AVIOS"))
@@ -44,9 +44,15 @@ namespace ParseJson
                     register = contacto.NewAccount();
                     idusuario = envio.SendArchivo(URlobject.URL[0].CreateAccount, register);
                 }
-                else {
+                else
+                {
 
-                    retry = true;
+                    if (i == 10)
+                    {
+                        retry = true;
+
+                    }
+                    i++;
                 }
             }            
 

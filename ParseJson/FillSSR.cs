@@ -4,7 +4,6 @@ using ParseJson.DoBooking.BookingClasses;
 using ParseJson.DoAirPrice;
 
 
-
 namespace ParseJson
 {
     public class FillSSR

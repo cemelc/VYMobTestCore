@@ -22,7 +22,7 @@ namespace ParseJson
         public void BasicDirBooking()
         {
             //Variables
-            string Env = "PRE";
+            string Env = "INT";
             var Date = DateTime.Now.AddDays(7);
             var DateRe = DateTime.Now.AddDays(10);
             string doairpriceresponsestring = null, Doairpricefeeresponsestring = null, dobookingresponsestring = null, baseAddressDoAirPrice = null,
@@ -106,17 +106,28 @@ namespace ParseJson
 
             //Recepcción del request de do air price response
             bool retry3 = false;
-
+            int i = 0;
             while (retry3 == false)
             {
-
                 if (doairpriceresponsestring == null)
                 {
                     doairpriceresponsestring = envio.SendArchivo(baseAddressDoAirPrice, doairpricerequest);
+
+                    if (i == 10)
+                    {
+                        retry3 = true;
+
+                    }
+                    i++;
                 }
-                else
-                {
-                    retry3 = true;
+                else {
+
+                    if (i == 10)
+                    {
+                        retry3 = true;
+
+                    }
+                    i++;
                 }
             }
 
@@ -151,17 +162,29 @@ namespace ParseJson
             Doairpricefeerequest.PaxInfoList = doairpricerequest.Paxs;
 
             bool retry2 = false;
-
+            int j = 0;
             while (retry2 == false)
             {
 
                 if (Doairpricefeeresponsestring == null)
                 {
                     Doairpricefeeresponsestring = envio.SendArchivo(baseAddressDoAirPriceAndFee, Doairpricefeerequest);
+
+                    if (j == 10)
+                    {
+                        retry2 = true;
+
+                    }
+                    j++;
                 }
                 else
                 {
-                    retry2 = true;
+                    if (j == 10)
+                    {
+                        retry2 = true;
+
+                    }
+                    j++;
                 }
             }
 

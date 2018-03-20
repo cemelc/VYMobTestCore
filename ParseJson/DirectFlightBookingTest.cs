@@ -22,7 +22,7 @@ namespace ParseJson
         public void BasicDirBooking()
         {
             //Variables
-            string Env = "INT";
+            string Env = "PRE";
             var Date = DateTime.Now.AddDays(7);
             var DateRe = DateTime.Now.AddDays(10);
             string doairpriceresponsestring = null, Doairpricefeeresponsestring = null, dobookingresponsestring = null, baseAddressDoAirPrice = null,
@@ -121,13 +121,7 @@ namespace ParseJson
                     i++;
                 }
                 else {
-
-                    if (i == 10)
-                    {
                         retry3 = true;
-
-                    }
-                    i++;
                 }
             }
 

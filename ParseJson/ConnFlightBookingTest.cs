@@ -23,7 +23,7 @@ namespace ParseJson
         {
             //Variables
             string Env = "INT";
-            var Date = DateTime.Now.AddDays(7);
+            var Date = DateTime.Now.AddDays(0);
             var DateRe = DateTime.Now.AddDays(10);
             string doairpriceresponsestring = null, Doairpricefeeresponsestring = null, dobookingresponsestring = null, baseAddressDoAirPrice = null,
                    baseAddressDoAirPriceAndFee = null, baseAddressDoBooking = null;

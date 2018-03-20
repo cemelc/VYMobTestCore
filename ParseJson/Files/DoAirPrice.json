@@ -20,8 +20,13 @@
   "DiscountType": 0,
   "AirportDateTimeList": [
     {
-      "DepartureStation": "LGW",
-      "ArrivalStation": "BCN",
+      "DepartureStation": "ALC",
+      "ArrivalStation": "PMI",
+      "MarketDateDeparture": "2018-02-07"
+    },
+    {
+      "DepartureStation": "PMI",
+      "ArrivalStation": "ALC",
       "MarketDateDeparture": "2018-02-07"
     }
   ]

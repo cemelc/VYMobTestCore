@@ -189,7 +189,7 @@ namespace ParseJson
             //BookingInfoList
             VipRoomFunctions vipobject = new VipRoomFunctions();
             BookingrequestObject.BookingContact = Contact.FillContact(BookingrequestObject);
-            BookingrequestObject.VipRoom = vipobject.FillVipRoom(currentJourney, 3, DoAirPriceAndFeeResponseObjecto);
+            BookingrequestObject.VipRoom = vipobject.FillVipRoom(currentJourney, 2, DoAirPriceAndFeeResponseObjecto);
 
 
             //Choosing payment method

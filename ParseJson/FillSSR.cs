@@ -2,6 +2,8 @@
 using ParseJson.DoAirPriceFee.DoAirPriceClasses;
 using ParseJson.DoBooking.BookingClasses;
 using ParseJson.DoAirPrice;
+using System.Linq;
+using ParseJson.DoAirPriceFee;
 
 
 namespace ParseJson
@@ -63,6 +65,6 @@ namespace ParseJson
 
             }
             return paxinfoaux;
-        }
+        }       
     }
 }

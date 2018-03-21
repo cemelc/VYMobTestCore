@@ -187,9 +187,9 @@ namespace ParseJson
             BookingrequestObject.PaxInfoList = BookingrequestObjectaux.PaxInfoList;
 
             //BookingInfoList
-            
+            FillAncillaries AncillariesObject = new FillAncillaries();
             BookingrequestObject.BookingContact = Contact.FillContact(BookingrequestObject);
-            BookingrequestObject.VipRoom = ssrcode.FillVipRoom(currentJourney, 2, DoAirPriceAndFeeResponseObjecto);
+            BookingrequestObject.VipRoom = AncillariesObject.FillVipRoom(currentJourney, 2, DoAirPriceAndFeeResponseObjecto);
 
 
             //Choosing payment method

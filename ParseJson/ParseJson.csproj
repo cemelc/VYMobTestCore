@@ -62,10 +62,13 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MixedFlightBookingTest.cs" />
     <Compile Include="DirectFlightBookingTest.cs" />
     <Compile Include="DoBooking\BookingClasses\PaymentHelper.cs" />
     <Compile Include="DoBooking\PaymentEnviroment.cs" />
+    <Compile Include="FillAncillaries.cs" />
     <Compile Include="PaymentMethod.cs" />
+    <Compile Include="InsuranceTest.cs" />
     <Compile Include="VipRoomTest.cs" />
     <Compile Include="PaymentTest.cs" />
     <Compile Include="CreateAccountTest.cs" />

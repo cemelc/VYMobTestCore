@@ -8,18 +8,17 @@ using ParseJson.DoAirPriceFee.DoAirPriceClasses;
 using ParseJson.DoBooking;
 using ParseJson.DoAirPrice;
 using System.Collections.Generic;
-
 namespace ParseJson
 {
 
     [TestClass]
-    public class ConnFlightBookingTest
+    public class InsuranceTest
     {
-        public static string ApplicationID = "Vueling.TestCore";
-        
+        public const string ApplicationID = "Vueling.Insurance";
+       
 
         [TestMethod]
-        public void BasicConnBooking()
+        public void Insurance()
         {
             //Variables
             string Env = "PRE";
@@ -106,25 +105,17 @@ namespace ParseJson
 
             //Recepcción del request de do air price response
             bool retry3 = false;
-            int i = 0;
+
             while (retry3 == false)
             {
+
                 if (doairpriceresponsestring == null)
                 {
                     doairpriceresponsestring = envio.SendArchivo(baseAddressDoAirPrice, doairpricerequest);
-
-                    if (i == 10)
-                    {
-                        retry3 = true;
-                    }
-                    i++;
                 }
-                else {
-                    if (i == 10)
-                    {
-                        retry3 = true;
-                    }
-                    i++;
+                else
+                {
+                    retry3 = true;
                 }
             }
 
@@ -132,7 +123,7 @@ namespace ParseJson
             doAirPriceResponse = JsonConvert.DeserializeObject<DoAirPriceResponse>(doairpriceresponsestring);
 
             //Selección del vuelo que usaremos para la pruebas
-            currentJourney = flightsearch.FindconnFlight(doAirPriceResponse);
+            currentJourney = flightsearch.FinddirFlight(doAirPriceResponse);
             log.Info("The journey picked is: " + currentJourney[0].JourneySellKey);
             log.Info("The fare picked is:" + currentJourney[0].JourneyFare[0].JourneyFareKey);
 
@@ -159,32 +150,19 @@ namespace ParseJson
             Doairpricefeerequest.PaxInfoList = doairpricerequest.Paxs;
 
             bool retry2 = false;
-            int j = 0;
+
             while (retry2 == false)
             {
 
                 if (Doairpricefeeresponsestring == null)
                 {
                     Doairpricefeeresponsestring = envio.SendArchivo(baseAddressDoAirPriceAndFee, Doairpricefeerequest);
-
-                    if (j == 10)
-                    {
-                        retry2 = true;
-                    }
-                    j++;
-
                 }
-                else {
-                    if (j == 10)
-                    {
-                        retry2 = true;
-                    }
-                    j++;
+                else
+                {
+                    retry2 = true;
                 }
             }
-
-
-
 
             //Llenado de objecto de respuesta del DoAirPRice
             DoAirPriceAndFeeResponseObjecto = JsonConvert.DeserializeObject<DoAirPriceFeeResponse>(Doairpricefeeresponsestring);
@@ -200,16 +178,6 @@ namespace ParseJson
 
 
             BookingrequestObject.SellKeyList[0].PaxSSRList = ssrcode.FillingSSr(doairpricerequest).PaxSSRList;
-
-            if (currentJourney.Count >= 2)
-            {
-                BookingrequestObject.SellKeyList[1].PaxSSRList.Add(new DoBooking.BookingClasses.PaxSSRList());
-                BookingrequestObject.SellKeyList[1].PaxSSRList = ssrcode.FillingSSr(doairpricerequest).PaxSSRList;
-            }
-
-
-
-
             BookingrequestObject.JourneyList = currentJourney;
             //BookingrequestObject.segmentInfo.Add(currentJourney[0].Segments);
 
@@ -219,8 +187,14 @@ namespace ParseJson
             BookingrequestObject.PaxInfoList = BookingrequestObjectaux.PaxInfoList;
 
             //BookingInfoList
-            BookingrequestObject.BookingContact = Contact.FillContact(BookingrequestObject);
+            FillAncillaries AncillariesObject = new FillAncillaries();
+            BookingrequestObject.BookingContact = Contact.FillContact(BookingrequestObject);            
+            BookingrequestObject.Insurance = AncillariesObject.FillInsurance(currentJourney, 4, DoAirPriceAndFeeResponseObjecto, 4);
 
+
+            //Choosing payment method
+            PaymentMethod PaymentInfoObject = new PaymentMethod();
+            BookingrequestObject.PaymentData = PaymentInfoObject.Payment("AE", Env); 
             //DoBookin              
 
             dobookingresponsestring = envio.SendArchivo(baseAddressDoBooking, BookingrequestObject);
@@ -236,6 +210,8 @@ namespace ParseJson
 
             log.Debug(string.Format("***** SERVICE FINALIZED: {0} *****", ApplicationID));
         }
-
     }
+
 }
+
+

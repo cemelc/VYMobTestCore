@@ -5,15 +5,15 @@
   "Language": "es-ES",
   "Paxs": [
     {
-      "Quantity": 2,
+      "Quantity": 1,
       "PaxType": "ADT"
     },
     {
-      "Quantity": 1,
+      "Quantity": 0,
       "PaxType": "CHD"
     },
     {
-      "Quantity": 1,
+      "Quantity": 0,
       "PaxType": "INF"
     }
   ],

@@ -22,7 +22,7 @@ namespace ParseJson
         public void BasicConnBooking()
         {
             //Variables
-            string Env = "PRE";
+            string Env = "INT";
             var Date = DateTime.Now.AddDays(7);
             var DateRe = DateTime.Now.AddDays(10);
             string doairpriceresponsestring = null, Doairpricefeeresponsestring = null, dobookingresponsestring = null, baseAddressDoAirPrice = null,
@@ -132,7 +132,7 @@ namespace ParseJson
             doAirPriceResponse = JsonConvert.DeserializeObject<DoAirPriceResponse>(doairpriceresponsestring);
 
             //Selección del vuelo que usaremos para la pruebas
-            currentJourney = flightsearch.FindconnFlight(doAirPriceResponse);
+            currentJourney = flightsearch.FindconnFlight(doAirPriceResponse, "OP");
             log.Info("The journey picked is: " + currentJourney[0].JourneySellKey);
             log.Info("The fare picked is:" + currentJourney[0].JourneyFare[0].JourneyFareKey);
 

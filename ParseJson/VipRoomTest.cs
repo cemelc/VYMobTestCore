@@ -123,7 +123,7 @@ namespace ParseJson
             doAirPriceResponse = JsonConvert.DeserializeObject<DoAirPriceResponse>(doairpriceresponsestring);
 
             //Selección del vuelo que usaremos para la pruebas
-            currentJourney = flightsearch.FinddirFlight(doAirPriceResponse);
+            currentJourney = flightsearch.FinddirFlight(doAirPriceResponse,"OP");
             log.Info("The journey picked is: " + currentJourney[0].JourneySellKey);
             log.Info("The fare picked is:" + currentJourney[0].JourneyFare[0].JourneyFareKey);
 
@@ -189,7 +189,7 @@ namespace ParseJson
             //BookingInfoList
             FillAncillaries AncillariesObject = new FillAncillaries();
             BookingrequestObject.BookingContact = Contact.FillContact(BookingrequestObject);
-            BookingrequestObject.VipRoom = AncillariesObject.FillVipRoom(currentJourney, 2, DoAirPriceAndFeeResponseObjecto);
+            BookingrequestObject.VipRoom = AncillariesObject.FillVipRoom(currentJourney, 1, DoAirPriceAndFeeResponseObjecto);
 
 
             //Choosing payment method

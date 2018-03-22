@@ -129,7 +129,7 @@ namespace ParseJson
             doAirPriceResponse = JsonConvert.DeserializeObject<DoAirPriceResponse>(doairpriceresponsestring);
 
             //Selección del vuelo que usaremos para la pruebas
-            currentJourney = flightsearch.FindMixedFlight(doAirPriceResponse);
+            currentJourney = flightsearch.FindMixedFlight(doAirPriceResponse,"OP");
             log.Info("The journey picked is: " + currentJourney[0].JourneySellKey);
             log.Info("The fare picked is:" + currentJourney[0].JourneyFare[0].JourneyFareKey);
 

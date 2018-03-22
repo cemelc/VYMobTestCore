@@ -1,5 +1,4 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using ParseJson.DoAirPriceFee.DoAirPriceClasses;
 using ParseJson.DoBooking.BookingClasses;
@@ -63,10 +62,10 @@ namespace ParseJson
                     auxinsurelot = insurancelot.Where(j => j.code != "SAS"); //Lost
                     break;
                 case 2:
-                    auxinsurelot = insurancelot.Where(j => j.code != "SEA");//Nulled
+                    auxinsurelot = insurancelot.Where(j => j.code != "SEA"); //Nulled
                     break;
                 case 3:
-                    auxinsurelot = insurancelot.Where(j => j.code != "SEM");//Medic
+                    auxinsurelot = insurancelot.Where(j => j.code != "SEM"); //Medic
                     break;
                 default:
                     auxinsurelot = insurancelot;//All

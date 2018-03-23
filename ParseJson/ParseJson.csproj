@@ -169,6 +169,9 @@
     <Compile Include="URL\DirectoryofURL.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Files\TestData.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Files\PaymentMethods.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

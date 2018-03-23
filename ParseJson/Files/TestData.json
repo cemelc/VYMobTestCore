@@ -1,0 +1,56 @@
+{
+  "TestCases": [
+    {
+      "ID": 1001,
+      "CurrencyCode": "EUR",
+      "AppVersion": "100",
+      "DeviceType": "WEB",
+      "Language": "es-ES",
+      "DiscountType": 0,
+      "DepartureStation": "BCN",
+      "ArrivalStation": "LGW",
+      "PaxNumber": 3,
+      "VipRooms": "No",
+      "Paxs": [
+        {
+          "Quantity": 2,
+          "PaxType": "ADT"
+        },
+        {
+          "Quantity": 0,
+          "PaxType": "CHD"
+        },
+        {
+          "Quantity": 1,
+          "PaxType": "INF"
+        }
+      ]
+    },
+    {
+      "ID": 1002,
+      "CurrencyCode": "EUR",
+      "AppVersion": "100",
+      "DeviceType": "WEB",
+      "Language": "es-ES",
+      "DiscountType": 0,
+      "DepartureStation": "BCN",
+      "ArrivalStation": "LGW",
+      "PaxNumber": 3,
+      "VipRooms": "No",
+      "Paxs": [
+        {
+          "Quantity": 2,
+          "PaxType": "ADT"
+        },
+        {
+          "Quantity": 0,
+          "PaxType": "CHD"
+        },
+        {
+          "Quantity": 0,
+          "PaxType": "INF"
+        }
+      ]
+    }
+  ]
+}

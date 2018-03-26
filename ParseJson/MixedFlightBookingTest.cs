@@ -22,7 +22,7 @@ namespace ParseJson
         public void BasicMixedBooking()
         {
             //Variables
-            string Env = "INT";
+            string Env = "PRE";
             var Date = DateTime.Now.AddDays(7);
             var DateRe = DateTime.Now.AddDays(10);
             string doairpriceresponsestring = null, Doairpricefeeresponsestring = null, dobookingresponsestring = null, baseAddressDoAirPrice = null,

@@ -50,12 +50,19 @@ namespace ParseJson
 
             bool retry = false;
             string login = null;
+            int i = 0;
 
             while (retry == false)
             {
                 if (login == null || login.Contains("E_AVIOS") || login.Contains("E_SYSTEM"))
                 {
                     login = envio.SendArchivo(fileURL.URL[0].Login, loginReqObj);
+                    if (i == 10)
+                    {
+                        retry = true;
+                    }
+                    i++;
+
                 }
                 else
                 {

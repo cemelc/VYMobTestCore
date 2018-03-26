@@ -30,7 +30,7 @@ namespace ParseJson
             if (flightselector.Trip.JourneyMarkets.Count > 1)
             {
                 // firstBAonInbound = flightselector.Trip.JourneyMarkets.Last().Journeys.First(j => j.IsConnection && fareList.Contains(j.JourneyFare.First().ProductClass));
-                firstBAonOutbound = flightselector.Trip.JourneyMarkets.First().Journeys.FirstOrDefault(j => j.IsConnection == false && j.JourneyFare.Any(jf => jf.ProductClass == type));
+                firstBAonInbound = flightselector.Trip.JourneyMarkets.Last().Journeys.FirstOrDefault(j => j.IsConnection == false && j.JourneyFare.Any(jf => jf.ProductClass == type));
                 var notBAJourneyFareInBound = firstBAonInbound.JourneyFare.Where(jf => jf.ProductClass != type);
 
                 foreach (var item in notBAJourneyFareInBound.ToList())
@@ -66,7 +66,7 @@ namespace ParseJson
             if (flightselector.Trip.JourneyMarkets.Count > 1)
             {
                 //firstBAonInbound = flightselector.Trip.JourneyMarkets.Last().Journeys.First(j => j.IsConnection == false && fareList.Contains(j.JourneyFare.First().ProductClass));
-                firstBAonOutbound = flightselector.Trip.JourneyMarkets.First().Journeys.FirstOrDefault(j => j.IsConnection == false && j.JourneyFare.Any(jf => jf.ProductClass == type));
+                firstBAonInbound = flightselector.Trip.JourneyMarkets.Last().Journeys.FirstOrDefault(j => j.IsConnection == false && j.JourneyFare.Any(jf => jf.ProductClass == type));
 
                 var notBAJourneyFareInBound = firstBAonInbound.JourneyFare.Where(jf => jf.ProductClass != type);
 
@@ -103,7 +103,7 @@ namespace ParseJson
             if (flightselector.Trip.JourneyMarkets.Count > 1)
             {
                 //firstBAonInbound = flightselector.Trip.JourneyMarkets.Last().Journeys.First(j => j.IsConnection && fareList.Contains(j.JourneyFare.First().ProductClass));
-                firstBAonOutbound = flightselector.Trip.JourneyMarkets.First().Journeys.FirstOrDefault(j => j.IsConnection == false && j.JourneyFare.Any(jf => jf.ProductClass == type));
+                firstBAonInbound = flightselector.Trip.JourneyMarkets.Last().Journeys.FirstOrDefault(j => j.IsConnection == false && j.JourneyFare.Any(jf => jf.ProductClass == type));
                 var notBAJourneyFareInBound = firstBAonInbound.JourneyFare.Where(jf => jf.ProductClass != type);
 
                 foreach (var item in notBAJourneyFareInBound.ToList())

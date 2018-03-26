@@ -43,6 +43,13 @@ namespace ParseJson
                     register = null;
                     register = contacto.NewAccount();
                     idusuario = envio.SendArchivo(URlobject.URL[0].CreateAccount, register);
+
+                    if (i == 10)
+                    {
+                        retry = true;
+                        
+                    }
+                    i++;
                 }
                 else
                 {

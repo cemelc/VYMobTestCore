@@ -62,6 +62,8 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\Data.cs" />
+    <Compile Include="TC1001.cs" />
     <Compile Include="MixedFlightBookingTest.cs" />
     <Compile Include="DirectFlightBookingTest.cs" />
     <Compile Include="DoBooking\BookingClasses\PaymentHelper.cs" />

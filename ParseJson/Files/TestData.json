@@ -6,9 +6,7 @@
       "AppVersion": "100",
       "DeviceType": "WEB",
       "Language": "es-ES",
-      "DiscountType": 0,
-      "DepartureStation": "BCN",
-      "ArrivalStation": "LGW",
+      "DiscountType": 1,
       "PaxNumber": 3,
       "VipRooms": "No",
       "Paxs": [
@@ -24,6 +22,18 @@
           "Quantity": 1,
           "PaxType": "INF"
         }
+      ],
+      "AirportDateTimeList": [
+        {
+          "DepartureStation": "BCN",
+          "ArrivalStation": "LGW",
+          "MarketDateDeparture": "2018-03-30"
+        },
+        {
+          "DepartureStation": "LGW",
+          "ArrivalStation": "BCN",
+          "MarketDateDeparture": "2018-03-31"
+        }
       ]
     },
     {
@@ -32,9 +42,7 @@
       "AppVersion": "100",
       "DeviceType": "WEB",
       "Language": "es-ES",
-      "DiscountType": 0,
-      "DepartureStation": "BCN",
-      "ArrivalStation": "LGW",
+      "DiscountType": 1,
       "PaxNumber": 3,
       "VipRooms": "No",
       "Paxs": [
@@ -47,8 +55,20 @@
           "PaxType": "CHD"
         },
         {
-          "Quantity": 0,
+          "Quantity": 1,
           "PaxType": "INF"
+        }
+      ],
+      "AirportDateTimeList": [
+        {
+          "DepartureStation": "BCN",
+          "ArrivalStation": "LGW",
+          "MarketDateDeparture": "2018-03-30"
+        },
+        {
+          "DepartureStation": "LGW",
+          "ArrivalStation": "BCN",
+          "MarketDateDeparture": "2018-03-31"
         }
       ]
     }

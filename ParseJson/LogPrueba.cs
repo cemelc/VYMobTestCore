@@ -18,7 +18,7 @@ namespace ParseJson
         public void LoginExisting()
         {
             string Env = "PRE";
-            FileManager Fileobject = new FileManager();
+            Parse Fileobject = new Parse();
             string configfile = Fileobject.FindFiles("*log4net.xml");         
             XmlConfigurator.Configure(Fileobject.LoadLog4netXmlDocument(configfile, Env, ApplicationID).DocumentElement);
             var log = LogManager.GetLogger(ApplicationID);

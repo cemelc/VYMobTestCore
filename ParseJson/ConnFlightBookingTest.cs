@@ -42,10 +42,11 @@ namespace ParseJson
             object Empty;
             FillSSR ssrcode = new FillSSR();
             FileManager Fileobject = new FileManager();
+            Parse LeerJson = new Parse();
 
             //Buscar archivos para la prueba
-            string configfile = Fileobject.FindFiles("*log4net.xml");
-            var whatever = Fileobject.LoadLog4netXmlDocument(configfile, Env, ApplicationID).DocumentElement;
+            string configfile = LeerJson.FindFiles("*log4net.xml");
+            var whatever = LeerJson.LoadLog4netXmlDocument(configfile, Env, ApplicationID).DocumentElement;
             Console.WriteLine(whatever);
             XmlConfigurator.Configure(whatever);
             var log = LogManager.GetLogger(ApplicationID);
@@ -54,20 +55,20 @@ namespace ParseJson
             log.Debug(string.Format("***** SERVICE INITIALIZED: {0} *****", ApplicationID));
 
             //DoAirPrice
-            string filelocationDoAirPrice = Fileobject.FindFiles("*DoAirPrice.json");
+            string filelocationDoAirPrice = LeerJson.FindFiles("*DoAirPrice.json");
 
             //DoPriceFee
-            string filelocationDoAirPriceFee = Fileobject.FindFiles("*DoPriceAndFee.json");
+            string filelocationDoAirPriceFee = LeerJson.FindFiles("*DoPriceAndFee.json");
 
             //DoBooking
-            string filelocationDoBooking = Fileobject.FindFiles("*DoBooking.json");
+            string filelocationDoBooking = LeerJson.FindFiles("*DoBooking.json");
 
             //Objeto de envio y recepcción
             SendFile envio = new SendFile();
-            Parse LeerJson = new Parse();
+            
 
             //Busqueda de endpoints
-            string filelocationURL = Fileobject.FindFiles("*Urls.json");
+            string filelocationURL = LeerJson.FindFiles("*Urls.json");
             Empty = LeerJson.FileRequest(filelocationURL, "file");
             fileURL = (DirectoryofURL)Empty;
             Empty = null;

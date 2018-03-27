@@ -10,8 +10,8 @@ namespace ParseJson
             
             Parse parsing = new Parse();
             PaymentData selectedmethod = new PaymentData();
-            FileManager Fileobject = new FileManager();
-            string filelocationDoAirPrice = Fileobject.FindFiles("*PaymentMethods.json");
+            
+            string filelocationDoAirPrice = parsing.FindFiles("*PaymentMethods.json");
             var Empty = parsing.FileRequest(filelocationDoAirPrice, "Payment");
             PaymentEnviroment credaitcardinfoobject = (PaymentEnviroment)Empty;
 

@@ -37,7 +37,7 @@ namespace ParseJson
             DirectoryofURL fileURL;
             Contacts Contact = new Contacts();
             List<Journey> currentJourney = new List<Journey>();
-            BuscarVuelo flightsearch = new BuscarVuelo();
+            SearchFlight flightsearch = new SearchFlight();
             object Empty;
             FillSSR ssrcode = new FillSSR();            
             Parse LeerJson = new Parse();
@@ -111,7 +111,7 @@ namespace ParseJson
 
                 if (doairpriceresponsestring == null)
                 {
-                    doairpriceresponsestring = envio.SendArchivo(baseAddressDoAirPrice, doairpricerequest);
+                    doairpriceresponsestring = envio.SendFiles(baseAddressDoAirPrice, doairpricerequest);
                 }
                 else
                 {
@@ -156,7 +156,7 @@ namespace ParseJson
 
                 if (Doairpricefeeresponsestring == null)
                 {
-                    Doairpricefeeresponsestring = envio.SendArchivo(baseAddressDoAirPriceAndFee, Doairpricefeerequest);
+                    Doairpricefeeresponsestring = envio.SendFiles(baseAddressDoAirPriceAndFee, Doairpricefeerequest);
                 }
                 else
                 {
@@ -197,7 +197,7 @@ namespace ParseJson
             BookingrequestObject.PaymentData = PaymentInfoObject.Payment("AE", Env); 
             //DoBookin              
 
-            dobookingresponsestring = envio.SendArchivo(baseAddressDoBooking, BookingrequestObject);
+            dobookingresponsestring = envio.SendFiles(baseAddressDoBooking, BookingrequestObject);
             //string json = JsonConvert.SerializeObject(BookingrequestObject, Formatting.Indented);
 
 

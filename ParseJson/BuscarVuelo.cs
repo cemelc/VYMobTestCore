@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace ParseJson
 {
-    public class BuscarVuelo
+    public class SearchFlight
     {
 
         public List<Journey> FindconnFlight(DoAirPriceResponse flightselector, string type)

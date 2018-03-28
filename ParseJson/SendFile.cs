@@ -7,7 +7,7 @@ namespace ParseJson
 {
     public class SendFile
     {
-        public String SendArchivo(string baseAddress, object filerequest)
+        public String SendFiles(string baseAddress, object filerequest)
         {
             if (filerequest == null)
             {
@@ -34,7 +34,7 @@ namespace ParseJson
             using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
             {
                 string json = JsonConvert.SerializeObject(filerequest, Formatting.Indented);
-                //Console.WriteLine(json);
+                Console.WriteLine(json);
                 streamWriter.Write(json);                
                 streamWriter.Flush();
                 streamWriter.Close();
@@ -60,7 +60,7 @@ namespace ParseJson
                     {
                         throw;
                     }
-                    SendArchivo(baseAddress, filerequest);
+                    SendFiles(baseAddress, filerequest);
                     --Tries;
 
                 }

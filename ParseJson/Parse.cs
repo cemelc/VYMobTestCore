@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 using ParseJson.DoAirPrice;
 using ParseJson.DoAirPriceFee;
 using ParseJson.DoBooking;
+using ParseJson.Data;
 using ParseJson.DoBooking.BookingClasses;
 using ParseJson.Login;
 using System.Xml;
@@ -39,6 +40,9 @@ namespace ParseJson
                     break;
                 case "Payment":
                     genericobject = JsonConvert.DeserializeObject<PaymentEnviroment>(File.ReadAllText(filelocation));
+                    break;
+                case "Data":
+                    genericobject = JsonConvert.DeserializeObject<TestData>(File.ReadAllText(filelocation));
                     break;
 
             }

@@ -62,7 +62,10 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataFillerObject.cs" />
     <Compile Include="Data\Data.cs" />
+    <Compile Include="DoAirPrice\DoAirPriceClasses\Error.cs" />
+    <Compile Include="DoAirPrice\DoAirPriceClasses\ValidationResult.cs" />
     <Compile Include="TC1001.cs" />
     <Compile Include="MixedFlightBookingTest.cs" />
     <Compile Include="DirectFlightBookingTest.cs" />

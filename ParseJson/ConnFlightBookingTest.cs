@@ -22,7 +22,7 @@ namespace ParseJson
         public void BasicConnBooking()
         {
             //Variables
-            string Env = "INT";
+            string Env = "PRE";
             var Date = DateTime.Now.AddDays(7);
             var DateRe = DateTime.Now.AddDays(10);
             string doairpriceresponsestring = null, Doairpricefeeresponsestring = null, dobookingresponsestring = null, baseAddressDoAirPrice = null,
@@ -38,7 +38,7 @@ namespace ParseJson
             DirectoryofURL fileURL;
             Contacts Contact = new Contacts();
             List<Journey> currentJourney = new List<Journey>();
-            BuscarVuelo flightsearch = new BuscarVuelo();
+            SearchFlight flightsearch = new SearchFlight();
             object Empty;
             FillSSR ssrcode = new FillSSR();
             FileManager Fileobject = new FileManager();
@@ -112,7 +112,7 @@ namespace ParseJson
             {
                 if (doairpriceresponsestring == null)
                 {
-                    doairpriceresponsestring = envio.SendArchivo(baseAddressDoAirPrice, doairpricerequest);
+                    doairpriceresponsestring = envio.SendFiles(baseAddressDoAirPrice, doairpricerequest);
 
                     if (i == 10)
                     {
@@ -166,7 +166,7 @@ namespace ParseJson
 
                 if (Doairpricefeeresponsestring == null)
                 {
-                    Doairpricefeeresponsestring = envio.SendArchivo(baseAddressDoAirPriceAndFee, Doairpricefeerequest);
+                    Doairpricefeeresponsestring = envio.SendFiles(baseAddressDoAirPriceAndFee, Doairpricefeerequest);
 
                     if (j == 10)
                     {
@@ -224,7 +224,7 @@ namespace ParseJson
 
             //DoBookin              
 
-            dobookingresponsestring = envio.SendArchivo(baseAddressDoBooking, BookingrequestObject);
+            dobookingresponsestring = envio.SendFiles(baseAddressDoBooking, BookingrequestObject);
             //string json = JsonConvert.SerializeObject(BookingrequestObject, Formatting.Indented);
 
 

@@ -42,7 +42,7 @@ namespace ParseJson
                 {
                     register = null;
                     register = contacto.NewAccount();
-                    idusuario = envio.SendArchivo(URlobject.URL[0].CreateAccount, register);
+                    idusuario = envio.SendFiles(URlobject.URL[0].CreateAccount, register);
 
                     if (i == 10)
                     {

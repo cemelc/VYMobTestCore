@@ -26,11 +26,11 @@
       "AirportDateTimeList": [
         {
           "DepartureStation": "BCN",
-          "ArrivalStation": "LGW",
+          "ArrivalStation": "AMS",
           "MarketDateDeparture": "2018-03-30"
         },
         {
-          "DepartureStation": "LGW",
+          "DepartureStation": "AMS",
           "ArrivalStation": "BCN",
           "MarketDateDeparture": "2018-03-31"
         }
@@ -69,6 +69,178 @@
           "DepartureStation": "LGW",
           "ArrivalStation": "BCN",
           "MarketDateDeparture": "2018-03-31"
+        }
+      ]
+    },
+    {
+      "ID": 1003,
+      "CurrencyCode": "EUR",
+      "AppVersion": "100",
+      "DeviceType": "WEB",
+      "Language": "es-ES",
+      "DiscountType": 1,
+      "PaxNumber": 3,
+      "VipRooms": "No",
+      "Paxs": [
+        {
+          "Quantity": 2,
+          "PaxType": "ADT"
+        },
+        {
+          "Quantity": 0,
+          "PaxType": "CHD"
+        },
+        {
+          "Quantity": 1,
+          "PaxType": "INF"
+        }
+      ],
+      "AirportDateTimeList": [
+        {
+          "DepartureStation": "BCN",
+          "ArrivalStation": "LGW",
+          "MarketDateDeparture": "2018-03-30"
+        },
+        {
+          "DepartureStation": "LGW",
+          "ArrivalStation": "BCN",
+          "MarketDateDeparture": "2018-03-31"
+        }
+      ]
+    },
+    {
+      "ID": 1004,
+      "CurrencyCode": "",
+      "AppVersion": "100",
+      "DeviceType": "WEB",
+      "Language": "es-ES",
+      "DiscountType": 1,
+      "PaxNumber": 3,
+      "VipRooms": "No",
+      "Paxs": [
+        {
+          "Quantity": 2,
+          "PaxType": "ADT"
+        },
+        {
+          "Quantity": 0,
+          "PaxType": "CHD"
+        },
+        {
+          "Quantity": 1,
+          "PaxType": "INF"
+        }
+      ],
+      "AirportDateTimeList": [
+        {
+          "DepartureStation": "BCN",
+          "ArrivalStation": "LGW",
+          "MarketDateDeparture": "2018-03-30"
+        }
+      ]
+    },
+    {
+      "ID": 1005,
+      "CurrencyCode": "EUR",
+      "AppVersion": "100",
+      "DeviceType": "WEB",
+      "Language": "es-ES",
+      "DiscountType": 1,
+      "PaxNumber": 3,
+      "PromoCode": "8757pophu",
+      "VipRooms": "No",
+      "Paxs": [
+        {
+          "Quantity": 2,
+          "PaxType": "ADT"
+        },
+        {
+          "Quantity": 0,
+          "PaxType": "CHD"
+        },
+        {
+          "Quantity": 1,
+          "PaxType": "INF"
+        }
+      ],
+      "AirportDateTimeList": [
+        {
+          "DepartureStation": "BCN",
+          "ArrivalStation": "LGW",
+          "MarketDateDeparture": "2018-03-30"
+        }
+      ]
+    },
+    {
+      "ID": 1006,
+      "CurrencyCode": "EUR",
+      "AppVersion": "100",
+      "DeviceType": "WEB",
+      "Language": "es-ES",
+      "DiscountType": 0,
+      "PaxNumber": 3,
+      "PromoCode": "poloMUONZMFPMR",
+      "VipRooms": "No",
+      "Paxs": [
+        {
+          "Quantity": 2,
+          "PaxType": "ADT"
+        },
+        {
+          "Quantity": 0,
+          "PaxType": "CHD"
+        },
+        {
+          "Quantity": 1,
+          "PaxType": "INF"
+        }
+      ],
+      "AirportDateTimeList": [
+        {
+          "DepartureStation": "BCN",
+          "ArrivalStation": "PMI",
+          "MarketDateDeparture": "2018-03-30"
+        },
+        {
+          "DepartureStation": "PMI",
+          "ArrivalStation": "BCN",
+          "MarketDateDeparture": "2018-03-30"
+        }
+      ]
+    },
+    {
+      "ID": 1007,
+      "CurrencyCode": "EUR",
+      "AppVersion": "100",
+      "DeviceType": "WEB",
+      "Language": "es-ES",
+      "DiscountType": 1,
+      "PaxNumber": 3,      
+      "VipRooms": "No",
+      "Paxs": [
+        {
+          "Quantity": 2,
+          "PaxType": "ADT"
+        },
+        {
+          "Quantity": 0,
+          "PaxType": "CHD"
+        },
+        {
+          "Quantity": 1,
+          "PaxType": "INF"
+        }
+      ],
+      "AirportDateTimeList": [
+        {
+          "DepartureStation": "BCN",
+          "ArrivalStation": "PMI",
+          "MarketDateDeparture": "2018-03-30"
+        },
+        {
+          "DepartureStation": "PMI",
+          "ArrivalStation": "BCN",
+          "MarketDateDeparture": "2018-03-30"
         }
       ]
     }

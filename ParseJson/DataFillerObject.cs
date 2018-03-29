@@ -27,6 +27,14 @@ namespace ParseJson
                     Date = DateTime.Now.AddDays(7);
                     DateRe = DateTime.Now.AddDays(4);
                     break;
+                case 1008:
+                    Date = DateTime.Now;
+                    while (Date.DayOfWeek != DayOfWeek.Wednesday)
+                    {
+                        Date = Date.AddDays(+1);
+                    }
+                    DateRe = Date.AddDays(+1);
+                    break;
                 default:
                     Date = DateTime.Now.AddDays(7);
                     DateRe = DateTime.Now.AddDays(10);

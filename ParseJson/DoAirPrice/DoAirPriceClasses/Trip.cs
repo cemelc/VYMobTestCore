@@ -4,6 +4,12 @@ namespace ParseJson.DoAirPrice.DoAirPriceClasses
 {
     public class Trip
     {
+        public Trip()
+        {
+            JourneyMarkets = new List<JourneyMarket>();
+        }
+        
+
         public bool IsMac { get; set; }
         public string CurrencyCode { get; set; }
         public int DiscountType { get; set; }
